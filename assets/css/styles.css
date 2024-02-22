@@ -496,25 +496,22 @@ footer {
   height: 200px; 
 }
 
-.img-start {
+.bt-start {
   margin: 50px auto; 
-  border: 10px solid white;
+  border: 10px solid #ffffff;
   transition: 0.5s;
   z-index: 1; 
-  box-shadow: 0 5px 1px rgba(128, 128, 128, 0.13);
   width: 170px;
   height: 170px;
   border-radius: 50%;
-}
-
-.bt-start{
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  
   transition: transform 0.3s ease;
 }
 
-.bt-start:hover {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+.bt-start:hover{
+  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.1);
   transform: translateY(6px);
 }
 
