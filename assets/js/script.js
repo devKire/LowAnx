@@ -62,10 +62,3 @@ function toggleSidebar() {
       sidebarToggleButton.classList.add("clicked"); // Adicionar a classe clicked
   }
 }
-
-// esperar animação terminar antes de passar a pg
-
-const button = document.getElementById("button");
-
-button.addEventListener("click", function() {classList.add("button")});
-setTimeout(function() {  window.location.href = "../index.html"; }, 1000); 
