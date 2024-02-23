@@ -17,13 +17,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+h6 {
   margin: 0;
 }
 
@@ -155,7 +149,7 @@ section:not(:last-child) {
 }
 
 
-/* Gradiente  */
+/* Gradientes  */
 
 @keyframes gradientAnimation {
   0% {
@@ -177,6 +171,12 @@ section:not(:last-child) {
   animation: gradientAnimation 15s linear infinite;
 }
 
+.background-gradient1 {
+  background: linear-gradient(45deg, #1352a0, #693DAE, #800080, #693DAE, #1352a0);
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s linear infinite;
+}
+
 .gradient-text {
   font-size: 36px;
   font-weight: bold;
@@ -189,19 +189,7 @@ section:not(:last-child) {
 
 
 /* Botão para abrir a barra lateral direita */
-/* .sidebar-toggle-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  cursor: pointer;
-  z-index: 1000;
-  color: #333; 
-  font-size: 24px; 
-  padding: 10px;
-  transition: transform 0.3s ease-in-out;
-} */
 
-/* Botão para abrir a barra lateral à esquerda */
 .sidebar-toggle-button {
   position: fixed;
   top: 10px;
@@ -224,40 +212,6 @@ section:not(:last-child) {
   /* Rotação quando clicado */
 }
 
-/* Estilo para a barra lateral à direita */
-/* .sidebar {
-  position: fixed;
-  top: 0;
-  right: -100px;
-  width: 100px; 
-  height: 100%;
-  transition: right 0.3s;
-  z-index: 1000;
-  overflow-y: scroll; 
-  
-}
-
-.sidebar-content {
-  padding: 20px;
-  color: #fff; 
-}
-
-.social-icons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.social-icon {
-  display: block;
-  margin-bottom: 50px;
-}
-
-.social-icon img {
-  width: 50px; 
-} */
-
 /* Estilo para a barra lateral à esquerda */
 .sidebar {
   position: fixed;
@@ -273,94 +227,24 @@ section:not(:last-child) {
   height: auto;
 }
 
-/* Alinhe os ícones sociais no meio à esquerda em formato de coluna */
-.social-icons {
+/* Alinhe os ícones no meio à esquerda em formato de coluna */
+.icons {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
 }
 
-.social-icon {
+.icon {
   display: block;
   margin-bottom: 50px;
 }
 
-.social-icon img {
+.icon img {
   width: 50px;
 }
 
-/* social icons da pg index */
-
-.social {
-  margin-top: 100px;
-}
-
-.social-icons-index {
-  display: inline-block;
-}
-
-.social-icon-index {
-  margin-right: 10px;
-  margin-left: 20px;
-}
-
-.social-icon-index img {
-  filter: brightness(0);
-  width: 50px;
-}
-
-/* Estilos para os projetos */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
-
-.projeto {
-  background-color: #3f3f3f;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.projeto:hover {
-  transform: translateY(-5px);
-}
-
-.projeto h3 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.projeto-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.projeto img {
-  width: 70%;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.projeto p {
-  margin-bottom: 10px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.btIndex {
-  margin-top: 100px;
-}
-
-/* Button */
+/* Buttons */
 
 .button {
   display: inline-block;
@@ -448,19 +332,7 @@ section:not(:last-child) {
   animation: shake 0.5s;
 }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  padding-top: 30px;
-  color: #000000;
-}
-
-.containerBt {
-  position: relative;
-  height: 200px;
-}
-
-.bt-start {
+.btIndex {
   margin: 50px auto;
   border: 10px solid #ffffff;
   transition: 0.5s;
@@ -470,11 +342,17 @@ footer {
   border-radius: 50%;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-
   transition: transform 0.3s ease;
 }
 
-.bt-start:hover {
+.btIndex:hover {
   box-shadow: 0 6px 10px rgba(255, 255, 255, 0.1);
   transform: translateY(6px);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding-top: 30px;
+  color: #000000;
 }

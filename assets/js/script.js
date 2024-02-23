@@ -23,21 +23,6 @@ window.addEventListener('scroll', () => {
   lastScrollTop = currentScrollTop;
 });
 
-// barra lateral direita:
-
-// function toggleSidebar() {
-//   var sidebar = document.querySelector(".sidebar");
-//   var sidebarToggleButton = document.querySelector(".sidebar-toggle-button");
-
-//   if (sidebar.style.right === "0px" || sidebar.style.right === "") {
-//       sidebar.style.right = "-200px"; // Esconder a barra lateral
-//       sidebarToggleButton.classList.remove("clicked"); // Remover a classe clicked
-//   } else {
-//       sidebar.style.right = "0px"; // Mostrar a barra lateral
-//       sidebarToggleButton.classList.add("clicked"); // Adicionar a classe clicked
-//   }
-// }
-
 // barra lateral direita
 
 function toggleSidebar() {
