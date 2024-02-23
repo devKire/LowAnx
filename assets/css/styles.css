@@ -1,84 +1,63 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
   color: hsl(0, 0%, 100%);
   text-align: left;
   background-color: #f2f2f2;
 }
 
 a {
-  text-decoration: none; /* Remove o sublinhado dos links */
+  text-decoration: none;
+  /* Remove o sublinhado dos links */
 }
 
 /* Títulos */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   margin: 0;
-  font-family: "Dosis", sans-serif;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
 }
 
-h1, .h1 { font-size: 2.5rem; }
-h2, .h2 { font-size: 2rem; }
-h3, .h3 { font-size: 1.75rem; }
-h4, .h4 { font-size: 1.5rem; }
-h5, .h5 { font-size: 1.25rem; }
-h6, .h6 { font-size: 1rem; }
-
-/* Conteúdo */
-.content {
-  padding-top: 100px; /* Ajuste conforme necessário */
-  text-align: center;
+h1,
+.h1 {
+  font-size: 2.5rem;
 }
 
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+h2,
+.h2 {
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
 }
 
 /* Pagina estilo E-zine */
-
-* {
-  box-sizing: border-box;
-}
-
-.e-zine-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0;
-  height: auto;
-}
-
-.button-header {
-  position: absolute;
-  bottom: 10px; 
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #282828;
-  padding: 5px 30px;
-  font-size: 0;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-
 
 .e-zine {
   position: relative;
@@ -88,9 +67,9 @@ h6, .h6 { font-size: 1rem; }
   box-shadow: 15px 10px 10px rgba(0.4, 0.3, 0.2, 0.1);
 }
 
-/*Imagen Flutuante em habilidades, experiência e formação*/
+/*Imagen Flutuante*/
 
-.imgFlutuante{
+.imgFlutuante {
   padding: 20px;
 }
 
@@ -102,30 +81,6 @@ h6, .h6 { font-size: 1rem; }
 
 .imgFlutuante img {
   width: 30%;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-
-/* Técnologias e Ferramentas */
-
-.grid-tf {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-}
-.tf {
-  padding: 20px;
-}
-
-.tf-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tf img {
-  width: 50%;
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -148,8 +103,10 @@ h6, .h6 { font-size: 1rem; }
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff; /* Cor do texto no cabeçalho */
-  padding: 40px 0; /* Espaçamento interno no cabeçalho */
+  color: #fff;
+  /* Cor do texto no cabeçalho */
+  padding: 40px 0;
+  /* Espaçamento interno no cabeçalho */
 }
 
 .header .header-content {
@@ -159,101 +116,35 @@ h6, .h6 { font-size: 1rem; }
 .apresentacao {
   margin-top: 100px;
 }
+
 .header .header-content .header-subtitle {
   font-weight: 700;
-  font-size: 24px; /* Tamanho da fonte do subtítulo */
+  font-size: 24px;
+  /* Tamanho da fonte do subtítulo */
 }
 
 .header .header-content .header-title {
-  font-size: 64px; /* Tamanho da fonte do título */
+  font-size: 100px;
+  /* Tamanho da fonte do título */
 }
 
 .header .header-content .header-mono {
-  letter-spacing: 2px; /* Espaçamento entre as letras */
+  letter-spacing: 2px;
+  /* Espaçamento entre as letras */
   font-weight: 500;
-  font-size: 18px; /* Tamanho da fonte do texto mono */
-}
-
-/* Título específico no cabeçalho */
-.header-title {
-  font-weight: bold;
-  opacity: 0.8;
-  font-size: 28px; /* Tamanho da fonte do título específico */
-}
-
-
-/* Estilos para a navegação padrão (para telas maiores) */
-nav {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Permitir a quebra de linha */
-}
-
-nav ul li {
-  margin-right: 10px;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 20px;
-  transition: background-color 0.3s ease;
-  font-size: 16px; /* Aumente o tamanho da fonte conforme necessário */
-}
-
-nav ul li a:hover {
-  background-color: #3f3f3f;
-  color: #ffffff;
-}
-
-/* Estilos para telas menores (por exemplo, telas de dispositivos móveis) */
-@media screen and (max-width: 768px) {
-  nav ul li {
-    margin-right: 10px;
-    margin-bottom: 10px; /* espaçamento vertical entre os itens */
-  }
-}
-
-
-/* Estilo para lista não ordenada (UL) */
-ul {
-  list-style-type: disc; /* Remove os marcadores de lista padrão */
-  padding: 0; /* Remove o preenchimento padrão */
-  margin: 0; /* Remove as margens padrão */
-  text-align: left;
-  font-size: 18px; 
-}
-
-/* Estilo para os itens de lista (LI) */
-li {
-  margin-bottom: 10px; /* Espaçamento entre os itens da lista */
-  padding: 5px 10px; /* Preenchimento interno */
-  border-radius: 5px; /* Cantos arredondados */
   font-size: 18px;
-}
-.negrito {
-  font-weight: bold;
-  font-size: 20px; 
+  /* Tamanho da fonte do texto mono */
 }
 
 
 /* Estilos para as seções */
 section {
-  padding: 80px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
 section h2 {
-  margin-bottom: 40px;
+  margin: 40px;
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
@@ -270,9 +161,11 @@ section:not(:last-child) {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -281,13 +174,13 @@ section:not(:last-child) {
 .background-gradient {
   background: linear-gradient(45deg, #0fca89, #0fd9c8, #1c3bb4, #5201e8, #1352a0);
   background-size: 200% 200%;
-  animation: gradientAnimation 20s linear infinite;
+  animation: gradientAnimation 15s linear infinite;
 }
 
 .gradient-text {
   font-size: 36px;
   font-weight: bold;
-  background: linear-gradient(45deg, #8b5cf6, #7143e0, #5b2aa5, #3d1f75, #1e115e);
+  background: linear-gradient(120deg, #fdfbfb, #ebedf0, #d0d1e6, #a6b1e1, #748de6);
   background-size: 200% 200%;
   animation: gradientAnimation 4s linear infinite;
   -webkit-background-clip: text;
@@ -311,21 +204,24 @@ section:not(:last-child) {
 /* Botão para abrir a barra lateral à esquerda */
 .sidebar-toggle-button {
   position: fixed;
-  top: 10px; 
-  right: 10px; 
+  top: 10px;
+  right: 10px;
   cursor: pointer;
   z-index: 1001;
   padding: 3px 7px;
   background-color: white;
   border-radius: 10px;
-  color: #000000; /* Cor do botão */
-  font-size: 24px; /* Tamanho do ícone do botão */
+  color: #000000;
+  /* Cor do botão */
+  font-size: 24px;
+  /* Tamanho do ícone do botão */
   transition: transform 0.3s ease;
 }
 
 /* Classe adicionada quando o botão é clicado */
 .sidebar-toggle-button.clicked {
-  transform: rotate(90deg); /* Rotação quando clicado */
+  transform: rotate(90deg);
+  /* Rotação quando clicado */
 }
 
 /* Estilo para a barra lateral à direita */
@@ -366,9 +262,9 @@ section:not(:last-child) {
 .sidebar {
   position: fixed;
   top: 120px;
-  right: -100px;  
+  right: -100px;
   width: 100px;
-  transition: right 0.3s; 
+  transition: right 0.3s;
   z-index: 1000;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -387,20 +283,21 @@ section:not(:last-child) {
 
 .social-icon {
   display: block;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 .social-icon img {
-  width: 50px; 
+  width: 50px;
 }
 
 /* social icons da pg index */
 
 .social {
-  margin-top: 100px; 
+  margin-top: 100px;
 }
+
 .social-icons-index {
-  display: inline-block; 
+  display: inline-block;
 }
 
 .social-icon-index {
@@ -410,7 +307,7 @@ section:not(:last-child) {
 
 .social-icon-index img {
   filter: brightness(0);
-  width: 50px; 
+  width: 50px;
 }
 
 /* Estilos para os projetos */
@@ -456,32 +353,99 @@ section:not(:last-child) {
 .projeto p {
   margin-bottom: 10px;
   color: #ffffff;
-  text-align:center;
+  text-align: center;
 }
 
 .btIndex {
   margin-top: 100px;
 }
-/* Botão */
+
+/* Button */
+
 .button {
   display: inline-block;
-  background-color: #4CAF50;
+  background-color: #3399FF;
+  /* Medium blue */
   color: white;
-  padding: 16px 30px;
+  padding: 15px 32px;
   font-size: 18px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 1s ease, box-shadow 1s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: #2E8BFF;
+  /* Darker medium blue */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(6px);
+  transform: translateY(3px);
+}
+
+.button:active {
+  background-color: #00008B;
+  /* Dark blue */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(85, 168, 236, 0.5);
+  /* Light blue */
+}
+
+/* Keyframe animations */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.button:hover:active {
+  animation: shake 0.5s;
 }
 
 /* Rodapé */
@@ -493,27 +457,24 @@ footer {
 
 .containerBt {
   position: relative;
-  height: 200px; 
+  height: 200px;
 }
 
 .bt-start {
-  margin: 50px auto; 
+  margin: 50px auto;
   border: 10px solid #ffffff;
   transition: 0.5s;
-  z-index: 1; 
+  z-index: 1;
   width: 170px;
   height: 170px;
   border-radius: 50%;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-  
+
   transition: transform 0.3s ease;
 }
 
-.bt-start:hover{
+.bt-start:hover {
   box-shadow: 0 6px 10px rgba(255, 255, 255, 0.1);
   transform: translateY(6px);
 }
-
-
-
