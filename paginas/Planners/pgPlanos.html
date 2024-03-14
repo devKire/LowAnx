@@ -117,11 +117,11 @@
         </symbol>
         <symbol id="plus" viewBox="0 0 16 16">
             <path
-                d="M 7.5 1.5 a 0.5 0.5 0 0 1 0.5 0.5 v 11 a 0.5 0.5 0 0 1 -1 0 v -11 a 0.5 0.5 0 0 1 0.5 -0.5 z M 1.5 7.5 a 0.5 0.5 0 0 1 0.5 -0.5 h 11 a 0.5 0.5 0 0 1 0 1 h -11 a 0.5 0.5 0 0 1 -0.5" />
+                d="M 3 9 L 3 7 L 8 7 L 8 2 L 10 2 L 10 7 L 15 7 L 15 9 L 10 9 L 10 14 L 8 14 L 8 9 L 3 9" />
         </symbol>
         <symbol id="trash" viewBox="0 0 16 16">
             <path
-                d="M 1.5 3.5 a 0.5 0.5 0 0 1 0.5 -0.5 h 12 a 0.5 0.5 0 0 1 0.5 0.5 V 4 h -13 v -0.5 z M 2 5 v 9 a 2 2 0 0 0 2 2 h 8 a 2 2 0 0 0 2 -2 V 5 H 2 z m 4 11 h 2 z z" />
+                d="M 1.5 3.5 a 0.5 0.5 0 0 1 0.5 -0.5 h 4 C 6 2 7 2 7 2 L 9 2 C 10 2 10 3 10 3 L 14 3 a 0.5 0.5 0 0 1 0.5 0.5 V 4 h -13 v -0.5 z M 2 5 v 9 a 2 2 0 0 0 2 2 h 8 a 2 2 0 0 0 2 -2 V 5 H 2 z z z" />
         </symbol>
     </svg>
 
@@ -150,9 +150,9 @@
                     <img src="https://github.com/devKire.png" alt="mdo" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small shadow">
-                    <li class="nav-item"><a class="dropdown-item" href="#">New project...</a></li>
-                    <li class="nav-item"><a class="dropdown-item" href="#">Configurações</a></li>
                     <li class="nav-item"><a class="dropdown-item" href="#">Perfil</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="#">Configurações</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="#">Sobre</a></li>
                     <li class="nav-item">
                         <hr class="dropdown-divider">
                     </li>
@@ -161,105 +161,358 @@
             </div>
         </header>
     </div>
-    <div class="b-example-divider"></div>
+    <div class="b-divider background-gradient"></div>
     <main>
-        <nav>
-            <div class="d-flex gap-2 justify-content-center py-3" id="nav-tab" role="tablist">
-                <button class="nav-link btn btn-dark rounded-pill px-3" id="nav-planners-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-planners" type="button" role="tab" aria-controls="nav-planners"
-                    aria-selected="true">Meus Planos</button>
-                <button class="nav-link btn btn-dark rounded-pill px-3" id="nav-save-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-save" type="button" role="tab" aria-controls="nav-save"
-                    aria-selected="true">Salvos</button>
-
-                <button class="nav-link btn btn-dark rounded-pill px-3" id="nav-completed-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-completed" type="button" role="tab" aria-controls="nav-completed"
-                    aria-selected="true">Concluídos</button>
-
-                <button class="nav-link btn btn-dark rounded-pill px-3" id="nav-trash-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-trash" type="button" role="tab" aria-controls="nav-trash"
-                    aria-selected="true">Lixeira (10 dias)</button>
-
-                <button class="nav-link btn btn-primary rounded-pill px-3" id="nav-add-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-add" type="button" role="tab" aria-controls="nav-add" aria-selected="true">+
-                    Adicionar Plano</button>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-planners" role="tabpanel" aria-labelledby="nav-planners-tab">
-                <p>Meus Planos</p>
-            </div>
-            <div class="tab-pane fade" id="nav-save" role="tabpanel" aria-labelledby="nav-save-tab">
-                <p>Salvos</p>
-            </div>
-            <div class="tab-pane fade" id="nav-completed" role="tabpanel" aria-labelledby="nav-completed-tab">
-                <p>Concluídos</p>
-            </div>
-            <div class="tab-pane fade" id="nav-trash" role="tabpanel" aria-labelledby="nav-trash-tab">
-                <p>Lixeira (10 dias)</p>
-            </div>
-            <div class="tab-pane fade" id="nav-add" role="tabpanel" aria-labelledby="nav-add-tab">
-                <p>+ Adicionar Plano.</p>
-            </div>
-        </div>   
-        <div class="row" data-masonry='{"percentPosition": true }'>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card d-flex text-bg-primary flex-row">
-                    <div class="card-img-left m-3">
-                        <img src="../../assets/img/logoLowAnx.jpg"
-                            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded "
-                            width="100" height="100" alt="Imagem">
+        <h1 class="text-center display-6 mt-5 mb-3">Planos</h1>
+       
+ 
+        <div class="container py-5">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
+                        type="button" role="tab" aria-controls="tab1" aria-selected="true">Meus Planos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
+                        role="tab" aria-controls="tab2" aria-selected="false">Salvos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button"
+                        role="tab" aria-controls="tab3" aria-selected="false">Concluídos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button"
+                        role="tab" aria-controls="tab4" aria-selected="false">Lixeira (10 dias)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tab5" type="button"
+                        role="tab" aria-controls="tab5" aria-selected="false">+ Adicionar plano</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                    <div class="container py-5">
+                        <div class="row featurette">
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-primary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-secondary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Título do Plano</h5>
-                        <p class="card-text">Descrição curta do Plano</p>
+                   
+                </div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                    <div class="container py-5">
+                        <div class="row featurette">
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-primary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-secondary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="position-absolute bottom-0 end-0">
-                        <a type="button" class="me-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2 opacity-100 theme-icon" width="1em" height="1em"
-                                class="bi bi-trash" viewBox="0 0 16 16">
-                                <use xlink:href="#trash" />
-                            </svg>
-                        </a>
-                        <a type="button" class="me-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2 opacity-100 theme-icon" width="1em" height="1em" viewBox="0 0 16 16">
-                                <use xlink:href="#plus" />
-                            </svg>
-                        </a>
+                   
+                </div>
+                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                    <div class="container py-5">
+                        <div class="row featurette">
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-primary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-secondary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card d-flex text-bg-secondary flex-row">
-                    <div class="card-img-left m-3">
-                        <img src="../../assets/img/logoLowAnx.jpg"
-                            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded "
-                            width="100" height="100" alt="Imagem">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Título do Plano</h5>
-                        <p class="card-text">Descrição curta do Plano</p>
-                    </div>
-                    <div class="position-absolute bottom-0 end-0">
-                        <a type="button" class="me-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2 opacity-100 theme-icon" width="1em" height="1em"
-                                class="bi bi-trash" viewBox="0 0 16 16">
-                                <use xlink:href="#trash" />
-                            </svg>
-                        </a>
-                        <a type="button" class="me-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2 opacity-100 theme-icon" width="1em" height="1em" viewBox="0 0 16 16">
-                                <use xlink:href="#plus" />
-                            </svg>
-                        </a>
+                <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                    <div class="container py-5">
+                        <div class="row featurette">
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-primary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-secondary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                    <div class="container py-5">
+                        <div class="row featurette">
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-primary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-secondary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
+                    <div class="container py-5">
+                        <div class="row featurette">
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-primary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card d-flex text-bg-secondary flex-row h-100">
+                                    <div class="card-img-left m-3">
+                                        <img src="../../assets/img/logoLowAnx.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="100" height="100" alt="Imagem">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Título do Plano</h5>
+                                        <p class="card-text">Descrição curta do Plano</p>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 py-2">
+                                        <a class="text-body-secondary me-2" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#trash" />
+                                            </svg>
+                                        </a>
+                                        <a class="text-body-secondary me-3" href="#">
+                                            <svg class="bi" width="16px" height="16px">
+                                                <use xlink:href="#plus" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
             </div>
+        </div>
     </main>
 
 
 
-    <div class="b-example-divider"></div>
+    <div class="b-divider background-gradient"></div>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
