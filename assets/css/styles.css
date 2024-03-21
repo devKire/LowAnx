@@ -2,9 +2,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Amiri, Georgia, "Times New Roman", serif;
 }
 
-
-
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -102,6 +99,14 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(6px);
 }
 
+/* ANIMAÇÃO NOS BT */
+.aniBtn{
+  transition: transform 0.3s ease;
+}
+.aniBtn:hover {
+  transform: translateY(5px); 
+  transition: transform 0.3s ease; 
+}
 /* LOGIN */
 
 .form-signin {
