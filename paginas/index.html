@@ -219,32 +219,30 @@
         </footer>
     </div>
 
+    <!-- Video modal popup-->
     <div class="modal fade" id="video" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <div class="modal-body">
-                                <h2 class="text-uppercase">Mensagem de Hoje</h2>
-                                <p class="item-intro text-muted">Vídeo explicativo da mensagem diária.</p>
-                                <!-- Substitua o atributo 'src' pelo URL do seu vídeo -->
-                                <video class="img-fluid d-block mx-auto" width="100%" height="auto" controls>
-                                    <source src="caminho/para/seu/video.mp4" type="video/mp4">
-                                    Seu navegador não suporta o elemento de vídeo.
-                                </video>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, error ut incidunt
-                                    eos vel voluptatem earum neque in ipsum nesciunt natus corporis unde tempora. Labore
-                                    sapiente commodi ad aliquid modi?</p>
+                <div class="row featurette">
+                    <div class="mx-auto text-center">
+                        <div class="modal-body">
+                            <h2 class="text-uppercase">Mensagem de Hoje</h2>
+                            <p class="item-intro text-muted">Vídeo explicativo da mensagem diária.</p>
+                            <video class="img-fluid d-block mx-auto" width="100%" height="auto" controls>
+                                <source src="video.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, error ut incidunt
+                                eos vel voluptatem earum neque in ipsum nesciunt natus corporis unde tempora. Labore
+                                sapiente commodi ad aliquid modi?</p>
 
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button ">
-                                    Compartilhar
-                                </button>
-                            </div>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                type="button ">
+                                Compartilhar
+                            </button>
                         </div>
                     </div>
                 </div>
