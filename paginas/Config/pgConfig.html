@@ -103,9 +103,314 @@
     <div class="b-divider background-gradient"></div>
     
     <main>
-
+        <h1 class="text-center display-6 mt-5 mb-3">Configurações</h1>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="nav flex-column" id="myTab" role="tablist">
+                        <li class="nav-item nav-link-hover" role="presentation">
+                            <button class="nav-link nav-link-hover" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
+                                type="button" role="tab" aria-controls="tab1" aria-selected="true">Configurações de Conta</button>
+                        </li>
+                        <li class="nav-item nav-link-hover" role="presentation">
+                            <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
+                                role="tab" aria-controls="tab2" aria-selected="false">Configurações de Notificações</button>
+                        </li>
+                        <li class="nav-item nav-link-hover" role="presentation">
+                            <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button"
+                                role="tab" aria-controls="tab3" aria-selected="false">Preferências de Aparência</button>
+                        </li>
+                        <li class="nav-item nav-link-hover" role="presentation">
+                            <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button"
+                                role="tab" aria-controls="tab4" aria-selected="false">Configurações de Idioma</button>
+                        </li>
+                        <li class="nav-item nav-link-hover" role="presentation">
+                            <button class="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tab5" type="button"
+                                role="tab" aria-controls="tab5" aria-selected="false">Configurações de Sincronização</button>
+                        </li>
+                        <li class="nav-item nav-link-hover" role="presentation">
+                            <button class="nav-link" id="tab6-tab" data-bs-toggle="tab" data-bs-target="#tab6" type="button"
+                                role="tab" aria-controls="tab6" aria-selected="false">Configurações de Privacidade</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8 border">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade m-3 show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                            <h2 class="mb-4">Configurações de Conta</h2>
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="nome" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="nome">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="sobrenome" class="form-label">Sobrenome</label>
+                                            <input type="text" class="form-control" id="sobrenome">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="senha" class="form-label">Nova Senha</label>
+                                            <input type="password" class="form-control" id="senha">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="confirmar-senha" class="form-label">Confirmar Nova Senha</label>
+                                            <input type="password" class="form-control" id="confirmar-senha">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">Desejo receber novidades por email</label>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="avatar" class="form-label">Foto de Perfil</label>
+                                    <input type="file" class="form-control" id="avatar">
+                                    <div class="form-text">Escolha uma imagem para seu avatar.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bio" class="form-label">Biografia</label>
+                                    <textarea class="form-control" id="bio" rows="3"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="cidade" class="form-label">Cidade</label>
+                                            <input type="text" class="form-control" id="cidade">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="estado" class="form-label">Estado</label>
+                                            <select class="form-select" id="estado">
+                                                <option value="">Selecione...</option>
+                                                <option value="AC">Acre</option>
+                                                <option value="AL">Alagoas</option>
+                                                <!-- Adicione outras opções de estado aqui -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefone" class="form-label">Telefone</label>
+                                    <input type="tel" class="form-control" id="telefone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="genero" class="form-label">Gênero</label>
+                                    <select class="form-select" id="genero">
+                                        <option value="">Selecione...</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                                    <input type="date" class="form-control" id="data-nascimento">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="interesses" class="form-label">Interesses</label>
+                                    <input type="text" class="form-control" id="interesses">
+                                    <div class="form-text">Insira seus interesses separados por vírgula.</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-pane fade m-3" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                            <h2>Configurações de Notificações</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="emailNotif" checked>
+                                        <label class="form-check-label" for="emailNotif">Receber notificações por email</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="pushNotif" checked>
+                                        <label class="form-check-label" for="pushNotif">Receber notificações push</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="smsNotif">
+                                        <label class="form-check-label" for="smsNotif">Receber notificações por SMS</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="horarioNotif" class="form-label">Horário das Notificações</label>
+                                    <input type="time" class="form-control" id="horarioNotif">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tipoNotif" class="form-label">Tipo de Notificação</label>
+                                    <select class="form-select" id="tipoNotif">
+                                        <option value="urgente">Urgente</option>
+                                        <option value="normal">Normal</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="notifSound">
+                                        <label class="form-check-label" for="notifSound">Ativar som de notificação</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="notifVibrate">
+                                        <label class="form-check-label" for="notifVibrate">Ativar vibração de notificação</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-pane fade m-3" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                            <h2>Preferências de Aparência</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="theme" class="form-label">Tema</label>
+                                    <select class="form-select" id="theme">
+                                        <option value="light">Claro</option>
+                                        <option value="dark">Escuro</option>
+                                        <option value="custom">Personalizado</option>
+                                    </select>
+                                </div>
+                                <div id="custom-options" style="display: none;">
+                                    <div class="mb-3">
+                                        <label for="primary-color" class="form-label">Cor Primária</label>
+                                        <input type="color" class="form-control" id="primary-color" value="#007bff">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="secondary-color" class="form-label">Cor Secundária</label>
+                                        <input type="color" class="form-control" id="secondary-color" value="#6c757d">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="background-color" class="form-label">Cor de Fundo</label>
+                                        <input type="color" class="form-control" id="background-color" value="#f8f9fa">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="font-color" class="form-label">Cor da Fonte</label>
+                                        <input type="color" class="form-control" id="font-color" value="#212529">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="font-size" class="form-label">Tamanho da Fonte</label>
+                                    <input type="range" class="form-range" min="12" max="24" id="font-size">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-pane fade m-3" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                            <h2>Configurações de Idioma</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="language" class="form-label">Idioma</label>
+                                    <select class="form-select" id="language">
+                                        <option value="en">Inglês</option>
+                                        <option value="pt">Português</option>
+                                        <option value="es">Espanhol</option>
+                                        <option value="fr">Francês</option>
+                                        <option value="de">Alemão</option>
+                                        <option value="it">Italiano</option>
+                                        <option value="ja">Japonês</option>
+                                        <option value="ko">Coreano</option>
+                                        <option value="zh">Chinês</option>
+                                        <option value="ru">Russo</option>
+                                        <option value="ar">Árabe</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="font-family" class="form-label">Fonte</label>
+                                    <select class="form-select" id="font-family">
+                                        <option value="Arial, sans-serif">Arial</option>
+                                        <option value="Verdana, sans-serif">Verdana</option>
+                                        <option value="Tahoma, sans-serif">Tahoma</option>
+                                        <option value="Georgia, serif">Georgia</option>
+                                        <option value="Times New Roman, serif">Times New Roman</option>
+                                        <option value="Courier New, monospace">Courier New</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-pane fade m-3" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                            <h2>Configurações de Sincronização</h2>
+                            <form>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="auto-sync">
+                                    <label class="form-check-label" for="auto-sync">Sincronizar automaticamente entre dispositivos</label>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sync-frequency" class="form-label">Frequência de Sincronização</label>
+                                    <select class="form-select" id="sync-frequency">
+                                        <option value="hourly">A cada hora</option>
+                                        <option value="daily">Diariamente</option>
+                                        <option value="weekly">Semanalmente</option>
+                                        <option value="bi-weekly">Quinzenalmente</option>
+                                        <option value="monthly">Mensalmente</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sync-time" class="form-label">Horário de Sincronização</label>
+                                    <input type="time" class="form-control" id="sync-time">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-pane fade m-3" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
+                            <h2>Configurações de Privacidade</h2>
+                            <form>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="public-profile">
+                                    <label class="form-check-label" for="public-profile">Tornar perfil público</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="hide-activity">
+                                    <label class="form-check-label" for="hide-activity">Ocultar atividade recente</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="hide-friends-list">
+                                    <label class="form-check-label" for="hide-friends-list">Ocultar lista de amigos</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="block-messages">
+                                    <label class="form-check-label" for="block-messages">Bloquear mensagens de usuários não conectados</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="disable-comments">
+                                    <label class="form-check-label" for="disable-comments">Desativar comentários em minhas postagens</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="hide-online-status">
+                                    <label class="form-check-label" for="hide-online-status">Ocultar status online</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    
     <div class="b-divider background-gradient"></div>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
