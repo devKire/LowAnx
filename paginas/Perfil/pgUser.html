@@ -103,7 +103,163 @@
     <div class="b-divider background-gradient"></div>
 
     <main>
-
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Seu Perfil</h5>
+                    <img src="../../assets/img/logoLowAnx.jpg" class="img-fluid rounded-circle mb-3" alt="Foto de Perfil">
+                    <p class="card-text">Nome de Usuário</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade m-3 show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                    <h2 class="mb-4">Configurações de Conta</h2>
+                    <form>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="sobrenome" class="form-label">Sobrenome</label>
+                            <input type="text" class="form-control" id="sobrenome">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="senha" class="form-label">Nova Senha</label>
+                            <input type="password" class="form-control" id="senha">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="confirmar-senha" class="form-label">Confirmar Nova Senha</label>
+                            <input type="password" class="form-control" id="confirmar-senha">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="newsletter">
+                        <label class="form-check-label" for="newsletter">Desejo receber novidades por email</label>
+                      </div>
+                      <div class="mb-3">
+                        <label for="avatar" class="form-label">Foto de Perfil</label>
+                        <input type="file" class="form-control" id="avatar">
+                        <div class="form-text">Escolha uma imagem para seu avatar.</div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="bio" class="form-label">Biografia</label>
+                        <textarea class="form-control" id="bio" rows="3"></textarea>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="cidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="cidade">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select class="form-select" id="estado">
+                              <option value="">Selecione...</option>
+                              <option value="AC">Acre</option>
+                              <option value="AL">Alagoas</option>
+                              <!-- Adicione outras opções de estado aqui -->
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone">
+                      </div>
+                      <div class="mb-3">
+                        <label for="genero" class="form-label">Gênero</label>
+                        <select class="form-select" id="genero">
+                          <option value="">Selecione...</option>
+                          <option value="masculino">Masculino</option>
+                          <option value="feminino">Feminino</option>
+                          <option value="outro">Outro</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="data-nascimento">
+                      </div>
+                      <div class="mb-3">
+                        <label for="interesses" class="form-label">Interesses</label>
+                        <input type="text" class="form-control" id="interesses">
+                        <div class="form-text">Insira seus interesses separados por vírgula.</div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </form>
+                  </div>
+          
+                  <div class="tab-pane fade m-3" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                    <h2>Configurações de Notificações</h2>
+                    <form>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="emailNotif" checked>
+                          <label class="form-check-label" for="emailNotif">Receber notificações por email</label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="pushNotif" checked>
+                          <label class="form-check-label" for="pushNotif">Receber notificações push</label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="smsNotif">
+                          <label class="form-check-label" for="smsNotif">Receber notificações por SMS</label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="horarioNotif" class="form-label">Horário das Notificações</label>
+                        <input type="time" class="form-control" id="horarioNotif">
+                      </div>
+                      <div class="mb-3">
+                        <label for="tipoNotif" class="form-label">Tipo de Notificação</label>
+                        <select class="form-select" id="tipoNotif">
+                          <option value="urgente">Urgente</option>
+                          <option value="normal">Normal</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="notifSound">
+                          <label class="form-check-label" for="notifSound">Ativar som de notificação</label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="notifVibrate">
+                          <label class="form-check-label" for="notifVibrate">Ativar vibração de notificação</label>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
 
     <div class="b-divider background-gradient"></div>
