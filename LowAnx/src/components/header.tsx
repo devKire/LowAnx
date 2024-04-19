@@ -19,10 +19,10 @@ function Header() {
           </Link>
 
           <ul className="nav nav-pills">
-            <li className="nav-item"><Link to={routes.home} className="nav-link active" aria-current="page">Inicio</Link></li>
-            <li className="nav-item"><Link to={routes.home} className="nav-link">Livros</Link></li>
-            <li className="nav-item"><Link to={routes.home} className="nav-link">Planos</Link></li>
-            <li className="nav-item"><Link to={routes.home} className="nav-link">Pesquisar</Link></li>
+            <li className="nav-item"><Link to={routes.principal} className="nav-link active" aria-current="page">Inicio</Link></li>
+            <li className="nav-item"><Link to={routes.book} className="nav-link">Livros</Link></li>
+            <li className="nav-item"><Link to={routes.guide} className="nav-link">Guias</Link></li>
+            <li className="nav-item"><Link to={routes.search} className="nav-link">Pesquisar</Link></li>
           </ul>
 
           <div className="flex-shrink-0 dropdown">
@@ -41,13 +41,13 @@ function Header() {
               />
             </a>
             <ul className="dropdown-menu text-small shadow">
-              <li className="nav-item"><Link className="dropdown-item" to={routes.home}>Perfil</Link></li>
-              <li className="nav-item"><Link className="dropdown-item" to={routes.home}>Configurações</Link></li>
-              <li className="nav-item"><Link className="dropdown-item" to={routes.home}>Sobre</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.profile}>Perfil</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.config}>Configurações</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.about}>Sobre</Link></li>
               <li className="nav-item">
                 <hr className="dropdown-divider" />
               </li>
-              <li className="nav-iteme"><Link className="dropdown-item color-red" to={routes.home}>Sair</Link></li>
+              <li className="nav-iteme"><Link className="dropdown-item color-red" to={routes.login}>Sair</Link></li>
             </ul>
           </div>
         </header>

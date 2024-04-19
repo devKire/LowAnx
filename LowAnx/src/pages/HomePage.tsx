@@ -10,20 +10,20 @@ export default function HomePage() {
       <header className="container">
         <div className="row justify-content-end py-3 my-4 border-top">
           <div className="col-md-3 text-end mt-2">
-            <a
-              href="#"
+            <Link
+              to={routes.login}
               type="button"
               className="btn btn-outline-primary"
             >
               Login
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to={routes.signup}
               type="button"
               className="btn btn-primary"
             >
               Sign-up
-            </a>
+            </Link>
           </div>
         </div>
         <div className="p-4 p-md-1 mb-4 rounded text-body-emphasis bg-body-primary">

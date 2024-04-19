@@ -22,26 +22,19 @@ function Footer() {
 
           <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
             <li className="ms-3">
-              <a className="text-body-secondary" href="#">
+              <a className="text-body-secondary" href="https://x.com/Low_Anx?t=u5BxsRBIXDaX2hFFZCayMQ&s=09">
                 <svg className="bi" width="24" height="24">
                   <use xlinkHref="/src/assets/svg/twitter.svg#twitter" />
                 </svg>
               </a>
             </li>
             <li className="ms-3">
-              <a className="text-body-secondary" href="#">
+              <a className="text-body-secondary" href="https://www.instagram.com/lowanx2024?igsh=MXUzZHBwbGN3dmZkZA==">
                 <svg className="bi" width="24" height="24">
                   <use xlinkHref="/src/assets/svg/instagram.svg#instagram" />
                 </svg>
               </a>
-            </li>
-            <li className="ms-3">
-              <a className="text-body-secondary" href="#">
-                <svg className="bi" width="24" height="24">
-                  <use xlinkHref="/src/assets/svg/facebook.svg#facebook" />
-                </svg>
-              </a>
-            </li>
+            </li> 
           </ul>
         </footer>
       </div>

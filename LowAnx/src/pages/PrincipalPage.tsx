@@ -104,31 +104,28 @@ export default function PrincipalPage() {
 
     {/* Video modal popup*/}
     <div className="modal fade" id="video" tabIndex={-1} role="dialog" aria-hidden="true">
-        <div className="modal-dialog modal-lg">
+        <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
                 <div className="modal-header">
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-10">
-                            <div className="modal-body">
-                                <h2 className="text-uppercase">Mensagem de Hoje</h2>
-                                <p className="item-intro text-muted">Vídeo explicativo da mensagem diária.</p>
-                                {/* Substitua o atributo 'src' pelo URL do seu vídeo */}
-                                <video className="img-fluid d-block mx-auto" width="100%" height="auto" controls>
-                                    <source src="caminho/para/seu/video.mp4" type="video/mp4" />
-                                    Seu navegador não suporta o elemento de vídeo.
-                                </video>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, error ut incidunt
-                                    eos vel voluptatem earum neque in ipsum nesciunt natus corporis unde tempora. Labore
-                                    sapiente commodi ad aliquid modi?</p>
+                <div className="row featurette">
+                    <div className="mx-auto text-center">
+                        <div className="modal-body">
+                            <h2 className="text-uppercase">Mensagem de Hoje</h2>
+                            <p className="item-intro text-muted">Vídeo explicativo da mensagem diária.</p>
+                            <video className="img-fluid d-block mx-auto" width="100%" height="auto" controls>
+                            <source src="caminho/para/seu/video.mp4" type="video/mp4" />
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, error ut incidunt
+                                eos vel voluptatem earum neque in ipsum nesciunt natus corporis unde tempora. Labore
+                                sapiente commodi ad aliquid modi?</p>
 
-                                <button className="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    Compartilhar
-                                </button>
-                            </div>
+                            <button className="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                type="button">
+                                Compartilhar
+                            </button>
                         </div>
                     </div>
                 </div>
