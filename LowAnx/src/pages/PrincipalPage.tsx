@@ -99,9 +99,8 @@ export default function PrincipalPage() {
                 </div>
             </div>     
         </div>
-
     </main>
-
+    
     {/* Video modal popup*/}
     <div className="modal fade" id="video" tabIndex={-1} role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered">
