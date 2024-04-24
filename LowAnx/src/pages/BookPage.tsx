@@ -8,57 +8,14 @@ import ListItem from "../components/ListItem";
 
 const booksListData = [
   {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
+    image:
+      "https://media.istockphoto.com/id/1388115341/pt/foto/shot-of-a-unrecognizable-woman-sitting-on-a-sofa-and-feeling-anxious.jpg?s=612x612&w=0&k=20&c=d9DiuUxNynYfWnK8BPHKtaU5PGqmY-PbTEsK18ekGho=",
     title: "Título do Livro",
     description: "Descrição curta do Livro",
   },
   {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
-    title: "Título do Livro",
-    description: "Descrição curta do Livro",
-  },
-  {
-    image: "https://static-cdn.jtvnw.net/ttv-boxart/512818_IGDB-144x192.jpg",
+    image:
+      "https://media.istockphoto.com/id/1064027420/pt/foto/silhouette-of-troubled-person-head.jpg?s=612x612&w=0&k=20&c=BanKIX-5fR_CuMVeet3rdsMIrBkciFOZZ77xdh2Vmbs=",
     title: "Título do Livro",
     description: "Descrição curta do Livro",
   },
@@ -69,6 +26,7 @@ export default function BookPage() {
     <>
       <Header />
       <Divider />
+      <h1 className="text-center display-6 mt-5 mb-3">Livros</h1>
       <div className="container py-5">
         <Tabs
           tabs={[
@@ -79,16 +37,17 @@ export default function BookPage() {
           ]}
         >
           <TabPane id="tab1" isActive>
-            Conteúdo da aba 'Meus Livros'
-            {booksListData.map(function (ListItemProps) {
-              return (
-                <ListItem
-                  image={ListItemProps.image}
-                  title={ListItemProps.title}
-                  description={ListItemProps.description}
-                />
-              );
-            })}
+            <div className="row featurette">
+              {booksListData.map(function (ListItemProps) {
+                return (
+                  <ListItem
+                    image={ListItemProps.image}
+                    title={ListItemProps.title}
+                    description={ListItemProps.description}
+                  />
+                );
+              })}
+            </div>
           </TabPane>
           <TabPane id="tab2" isActive>
             Conteúdo da aba 'Salvos'

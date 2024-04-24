@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { routes } from "../router/routes";
+import { useEffect } from "react";
 
 function Header() {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log("Active Route:", location.pathname);
+  }, [location.pathname]);
+  
   return (
     <>
       <h1 className="visually-hidden">dividindo</h1>
@@ -15,14 +22,22 @@ function Header() {
             <svg className="bi me-2" width="80" height="50">
               <use xlinkHref="/src/assets/svg/lowanx.svg#lowanx" />
             </svg>
-            <span className="fs-4">LowAnx</span>
+            <span className="fs-4 fw-bold">LowAnx</span>
           </Link>
 
           <ul className="nav nav-pills">
-            <li className="nav-item"><Link to={routes.principal} className="nav-link active" aria-current="page">Inicio</Link></li>
-            <li className="nav-item"><Link to={routes.book} className="nav-link">Livros</Link></li>
-            <li className="nav-item"><Link to={routes.guide} className="nav-link">Guias</Link></li>
-            <li className="nav-item"><Link to={routes.search} className="nav-link">Pesquisar</Link></li>
+            <li className={`nav-item ${location.pathname === routes.principal ? 'show active' : ''}`}>
+              <Link to={routes.principal} className="nav-link" aria-current="page">Inicio</Link>
+            </li>
+            <li className={`nav-item ${location.pathname === routes.book ? 'show active' : ''}`}>
+              <Link to={routes.book} className="nav-link">Livros</Link>
+            </li>
+            <li className={`nav-item ${location.pathname === routes.guide ? 'show active' : ''}`}>
+              <Link to={routes.guide} className="nav-link">Guias</Link>
+            </li>
+            <li className={`nav-item ${location.pathname === routes.search ? 'show active' : ''}`}>
+              <Link to={routes.search} className="nav-link">Pesquisar</Link>
+            </li>
           </ul>
 
           <div className="flex-shrink-0 dropdown">
@@ -47,7 +62,7 @@ function Header() {
               <li className="nav-item">
                 <hr className="dropdown-divider" />
               </li>
-              <li className="nav-iteme"><Link className="dropdown-item color-red" to={routes.login}>Sair</Link></li>
+              <li className="nav-item"><Link className="dropdown-item color-red" to={routes.login}>Sair</Link></li>
             </ul>
           </div>
         </header>
