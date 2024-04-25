@@ -37,16 +37,18 @@ export default function BookPage() {
           ]}
         >
           <TabPane id="tab1" isActive>
-            <div className="row featurette">
-              {booksListData.map(function (ListItemProps) {
-                return (
-                  <ListItem
-                    image={ListItemProps.image}
-                    title={ListItemProps.title}
-                    description={ListItemProps.description}
-                  />
-                );
-              })}
+          <div className="container py-5">
+              <div className="row featurette">
+                {booksListData.map(function (ListItemProps) {
+                  return (
+                    <ListItem
+                      image={ListItemProps.image}
+                      title={ListItemProps.title}
+                      description={ListItemProps.description}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </TabPane>
           <TabPane id="tab2" isActive>

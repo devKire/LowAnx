@@ -3,7 +3,7 @@ import { routes } from "../router/routes";
 import Footer from "../components/footer";
 import Divider from "../components/divider";
 import Header from "../components/header";
-
+import Footer02 from "../components/footer02";
 export default function PrincipalPage() {
   return (
     <>
@@ -131,7 +131,7 @@ export default function PrincipalPage() {
             </div>
         </div>
     </div>
-    <Footer />
+    <Footer02 />
     </>
   );
 }

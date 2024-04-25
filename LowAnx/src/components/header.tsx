@@ -48,7 +48,7 @@ function Header() {
               aria-expanded="false"
             >
               <img
-                src="/src/assets/img/LogoLowAnx.jpg"
+                src="https://media.istockphoto.com/id/1345149081/pt/vetorial/a-frustrated-man-sits-and-hugs-his-knees-nervous-problem-anxiety-and-confusion-in-thoughts.jpg?s=612x612&w=0&k=20&c=wqDH7BJsVBfLStoEXtF4w8pPdmTK1NDsFI48GuIGcn0="
                 alt="mdo"
                 width="32"
                 height="32"
