@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { routes } from "../router/routes";
 import { useEffect } from "react";
+import { splitTextIntoSpans } from "../dist/tsx/scripts";
 
 function Header() {
   const location = useLocation();
@@ -8,7 +9,9 @@ function Header() {
   useEffect(() => {
     console.log("Active Route:", location.pathname);
   }, [location.pathname]);
-  
+  useEffect(() => {
+    splitTextIntoSpans('.bubble-text');
+  }, []);
   return (
     <>
       <h1 className="visually-hidden">dividindo</h1>
@@ -19,23 +22,23 @@ function Header() {
             to={routes.home}
             className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
           >
-            <svg className="bi me-2" width="80" height="50">
+            <svg className="bi me-2 pulse" width="80" height="50">
               <use xlinkHref="/src/assets/svg/lowanx.svg#lowanx" />
             </svg>
-            <span className="fs-4 fw-bold">LowAnx</span>
+            <span className="fs-2 fw-bold bubble-text text">LowAnx</span>
           </Link>
 
           <ul className="nav nav-pills">
-            <li className={`nav-item ${location.pathname === routes.principal ? 'show active' : ''}`}>
+            <li className={`pulse nav-item ${location.pathname === routes.principal ? 'show active' : ''}`}>
               <Link to={routes.principal} className="nav-link" aria-current="page">Inicio</Link>
             </li>
-            <li className={`nav-item ${location.pathname === routes.book ? 'show active' : ''}`}>
+            <li className={`pulse nav-item ${location.pathname === routes.book ? 'show active' : ''}`}>
               <Link to={routes.book} className="nav-link">Livros</Link>
             </li>
-            <li className={`nav-item ${location.pathname === routes.guide ? 'show active' : ''}`}>
+            <li className={`pulse nav-item ${location.pathname === routes.guide ? 'show active' : ''}`}>
               <Link to={routes.guide} className="nav-link">Guias</Link>
             </li>
-            <li className={`nav-item ${location.pathname === routes.search ? 'show active' : ''}`}>
+            <li className={`pulse nav-item ${location.pathname === routes.search ? 'show active' : ''}`}>
               <Link to={routes.search} className="nav-link">Pesquisar</Link>
             </li>
           </ul>

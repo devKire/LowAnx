@@ -3,8 +3,14 @@ import { routes } from "../router/routes"
 import Footer from "../components/footer"
 import Divider from "../components/divider"
 import Waves from "../components/waves"
+import { useEffect } from "react";
+import { splitTextIntoSpans } from "../dist/tsx/scripts";
 
 export default function HomePage() {
+  useEffect(() => {
+    splitTextIntoSpans('.bubble-text');
+  }, []); 
+
   return (
     <>
       <Divider />
@@ -18,7 +24,7 @@ export default function HomePage() {
         <div className="p-4 p-md-1 mb-4 rounded text-body-emphasis bg-body-primary">
           <div className="row">
             <div className="col-lg-6 px-0">
-              <h1 className="display-1 fst-italic">LowAnx</h1>
+              <h1 className="display-1 fst-italic bubble-text text">LowAnx</h1>
               <p className="lead my-3">
                 Oferecemos apoio e informações valiosas para pessoas com
                 Ansiedade, totalmente GRATUITO!
