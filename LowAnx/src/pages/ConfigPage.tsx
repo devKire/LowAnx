@@ -3,6 +3,7 @@ import { routes } from "../router/routes"
 import Footer from "../components/footer"
 import Divider from "../components/divider"
 import Header from "../components/header"
+import Waves from "../components/waves"
 
 export default function ConfigPage() {
   return (
@@ -11,33 +12,33 @@ export default function ConfigPage() {
       <Divider />
       <main>
         <h1 className="text-center display-6 mt-5 mb-3">Configurações</h1>
-        <div className="container py-5">
+        <div className="container mt-5 glass">
             <div className="row">
                 <div className="col-md-4">
                     <ul className="nav flex-column" id="myTab" role="tablist">
                         <li className="nav-item nav-link-hover" role="presentation">
-                            <button className="nav-link nav-link-hover" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
-                                type="button" role="tab" aria-controls="tab1" aria-selected="true">Configurações de Conta</button>
+                            <a className="nav-link nav-link-hover" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
+                                type="button" role="tab" aria-controls="tab1" aria-selected="true">Configurações de Conta</a>
                         </li>
                         <li className="nav-item nav-link-hover" role="presentation">
-                            <button className="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
-                                role="tab" aria-controls="tab2" aria-selected="false">Configurações de Notificações</button>
+                            <a className="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
+                                role="tab" aria-controls="tab2" aria-selected="false">Configurações de Notificações</a>
                         </li>
                         <li className="nav-item nav-link-hover" role="presentation">
-                            <button className="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button"
-                                role="tab" aria-controls="tab3" aria-selected="false">Preferências de Aparência</button>
+                            <a className="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button"
+                                role="tab" aria-controls="tab3" aria-selected="false">Preferências de Aparência</a>
                         </li>
                         <li className="nav-item nav-link-hover" role="presentation">
-                            <button className="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button"
-                                role="tab" aria-controls="tab4" aria-selected="false">Configurações de Idioma</button>
+                            <a className="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button"
+                                role="tab" aria-controls="tab4" aria-selected="false">Configurações de Idioma</a>
                         </li>
                         <li className="nav-item nav-link-hover" role="presentation">
-                            <button className="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tab5" type="button"
-                                role="tab" aria-controls="tab5" aria-selected="false">Configurações de Sincronização</button>
+                            <a className="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tab5" type="button"
+                                role="tab" aria-controls="tab5" aria-selected="false">Configurações de Sincronização</a>
                         </li>
                         <li className="nav-item nav-link-hover" role="presentation">
-                            <button className="nav-link" id="tab6-tab" data-bs-toggle="tab" data-bs-target="#tab6" type="button"
-                                role="tab" aria-controls="tab6" aria-selected="false">Configurações de Privacidade</button>
+                            <a className="nav-link" id="tab6-tab" data-bs-toggle="tab" data-bs-target="#tab6" type="button"
+                                role="tab" aria-controls="tab6" aria-selected="false">Configurações de Privacidade</a>
                         </li>
                     </ul>
                 </div>
@@ -317,6 +318,7 @@ export default function ConfigPage() {
     </main>
       <Footer />
       <Divider />
+      <Waves />
     </>
   );
 }

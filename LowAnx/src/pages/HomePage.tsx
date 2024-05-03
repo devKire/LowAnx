@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { routes } from "../router/routes"
 import Footer from "../components/footer"
 import Divider from "../components/divider"
+import Waves from "../components/waves"
 
 export default function HomePage() {
   return (
@@ -39,6 +40,8 @@ export default function HomePage() {
         </div>
       </header>
       <Footer />
+      <Divider />
+      <Waves />
     </>
   );
 }

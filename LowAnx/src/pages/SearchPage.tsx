@@ -3,6 +3,7 @@ import { routes } from "../router/routes"
 import Footer from "../components/footer"
 import Divider from "../components/divider"
 import Header from "../components/header"
+import Waves from "../components/waves"
 
 export default function SearchPage() {
   return (
@@ -24,6 +25,7 @@ export default function SearchPage() {
         </div>
     </main>
       <Footer />
+      <Waves />
     </>
   );
 }

@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { routes } from "../router/routes";
 import Footer from "../components/footer";
 import Divider from "../components/divider";
+import Waves from "../components/waves";
 
 export default function LoginPage() {
   return (
     <>
       <Divider />
       <main className="container py-5">
-        <div className="form-signin w-100 m-auto">
+        <div className="form-signin w-100 m-auto glass">
           <form>
             <Link to={routes.home} type="button" className="d-flex justify-content-start mb-4">
               <img src="/src/assets/img/logoLowAnx.jpg" alt="" className="border border-secondary" width="72" height="72" />
@@ -24,7 +25,6 @@ export default function LoginPage() {
               <input type="password" className="form-control" id="floatingPassword" placeholder="Password" required />
               <label htmlFor="floatingPassword">Sua senha</label>
             </div>
-
             <div className="form-check text-start my-3">
               <input className="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" />
               <label className="form-check-label" htmlFor="flexCheckDefault">
@@ -38,6 +38,7 @@ export default function LoginPage() {
       </main>
       <Footer />
       <Divider />
+      <Waves />
     </>
   );
 }

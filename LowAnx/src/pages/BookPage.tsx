@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import Divider from "../components/divider";
 import Header from "../components/header";
 import ListItem from "../components/ListItem";
+import Waves from "../components/waves";
 
 const booksListData = [
   {
@@ -27,7 +28,7 @@ export default function BookPage() {
       <Header />
       <Divider />
       <h1 className="text-center display-6 mt-5 mb-3">Livros</h1>
-      <div className="container py-5">
+      <div className="container py-5 glass">
         <Tabs
           tabs={[
             { id: "tab1", title: "Meus Livros" },
@@ -62,8 +63,9 @@ export default function BookPage() {
           </TabPane>
         </Tabs>
       </div>
-      <Divider />
       <Footer />
+      <Divider />
+      <Waves />
     </>
   );
 }

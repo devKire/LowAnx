@@ -3,6 +3,7 @@ import { routes } from "../router/routes"
 import Footer from "../components/footer"
 import Divider from "../components/divider"
 import Header from "../components/header"
+import Waves from "../components/waves"
 
 export default function ProfilePage() {
   return (
@@ -13,7 +14,7 @@ export default function ProfilePage() {
         <div className="container mt-5">
             <div className="row">
               <div className="col-md-4">
-                <div className="card">
+                <div className="card glass">
                   <div className="card-body text-center">
                     <h5 className="card-title">Seu Perfil</h5>
                     <img src="https://media.istockphoto.com/id/1345149081/pt/vetorial/a-frustrated-man-sits-and-hugs-his-knees-nervous-problem-anxiety-and-confusion-in-thoughts.jpg?s=612x612&w=0&k=20&c=wqDH7BJsVBfLStoEXtF4w8pPdmTK1NDsFI48GuIGcn0=" className="img-fluid rounded-circle mb-3" alt="Foto de Perfil" />
@@ -21,7 +22,7 @@ export default function ProfilePage() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-8">
+              <div className="col-md-8 glass">
                 <div className="tab-content" id="myTabContent">
                   <div className="tab-pane fade m-3 show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                     <h2 className="mb-4">Configurações de Conta</h2>
@@ -169,6 +170,7 @@ export default function ProfilePage() {
     </main>
       <Footer />
       <Divider />
+      <Waves />
     </>
   );
 }

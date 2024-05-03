@@ -3,7 +3,7 @@ import { routes } from "../router/routes";
 import Footer from "../components/footer";
 import Divider from "../components/divider";
 import Header from "../components/header";
-import Footer02 from "../components/footer02";
+import Waves from "../components/waves";
 export default function PrincipalPage() {
   return (
     <>
@@ -26,8 +26,7 @@ export default function PrincipalPage() {
                     <div className="container">
                         <div className="carousel-caption text-start">
                             <h1>Explorar mais Livros.</h1>
-                            <p className="opacity-75">Some representative placeholder content for the first slide of the
-                                carousel.</p>
+                            <p className="opacity-75">Procure o livro ideal para você ler hoje, ou continue de onde parou :)</p>
                             <p><Link className="btn btn-lg btn-primary" to={routes.home}>Meus Livros</Link></p>
                         </div>
                     </div>
@@ -40,8 +39,8 @@ export default function PrincipalPage() {
                     <div className="container">
                         <div className="carousel-caption">
                             <h1>Olá Usuário.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><Link className="btn btn-lg btn-primary" to={routes.home}>Continuar Plano</Link></p>
+                            <p>Que tal continuar de onde você parou em seu último Guia?</p>
+                            <p><Link className="btn btn-lg btn-primary" to={routes.home}>Continuar Guia</Link></p>
                         </div>
                     </div>
                 </div>
@@ -52,9 +51,9 @@ export default function PrincipalPage() {
                     </svg>
                     <div className="container">
                         <div className="carousel-caption text-end">
-                            <h1>Procurar Planos Gratuitos.</h1>
-                            <p>Some representative placeholder content for the third slide of this carousel.</p>
-                            <p><Link className="btn btn-lg btn-primary" to={routes.home}>Ver Planos</Link></p>
+                            <h1>Procurar Guias.</h1>
+                            <p>Você pode procurar um Guia especialmente feito para você hoje! O que acha?</p>
+                            <p><Link className="btn btn-lg btn-primary" to={routes.home}>Ver Guias</Link></p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +69,7 @@ export default function PrincipalPage() {
         </div>
     
         <div className="container py-5">
-            <div className="card p-5">
+            <div className="card p-5 glass">
                 <h2 className="text-left mb-4">Mensagem Diária</h2>
                 <div className="row featurette">
                     <div className="col-md-6">
@@ -131,7 +130,8 @@ export default function PrincipalPage() {
             </div>
         </div>
     </div>
-    <Footer02 />
+    <Footer />
+    <Waves />
     </>
   );
 }

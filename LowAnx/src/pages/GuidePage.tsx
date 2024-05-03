@@ -6,6 +6,7 @@ import Header from "../components/header";
 import TabPane from "../components/TabPane";
 import Tabs from "../components/Tabs";
 import ListItem from "../components/ListItem";
+import Waves from "../components/waves";
 
 const guidesListData = [
   {
@@ -68,7 +69,7 @@ export default function GuidePage() {
       <Header />
       <Divider />
       <h1 className="text-center display-6 mt-5 mb-3">Guias</h1>
-      <div className="container py-5">
+      <div className="container py-5 glass">
         <Tabs
           tabs={[
             { id: "tab1", title: "Meus Guias" },
@@ -109,8 +110,9 @@ export default function GuidePage() {
           </TabPane>
         </Tabs>
       </div>
-      <Divider />
       <Footer />
+      <Divider />
+      <Waves />
     </>
   );
 }
