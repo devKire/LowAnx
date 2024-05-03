@@ -4,7 +4,7 @@ import Footer from "../components/footer"
 import Divider from "../components/divider"
 import Waves from "../components/waves"
 import { useEffect } from "react";
-import { splitTextIntoSpans } from "../dist/tsx/scripts";
+import { splitTextIntoSpans } from "../scripts";
 
 export default function HomePage() {
   useEffect(() => {

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { routes } from "../router/routes";
 import { useEffect } from "react";
-import { splitTextIntoSpans } from "../dist/tsx/scripts";
+import { splitTextIntoSpans } from "../scripts";
 
 function Header() {
   const location = useLocation();
