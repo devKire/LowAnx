@@ -1,4 +1,3 @@
-import React from "react";
 import Tabs from "../components/Tabs";
 import TabPane from "../components/TabPane";
 import Footer from "../components/footer";
