@@ -36,13 +36,13 @@ export default function ListItem(props: ListItemProps) {
           </div>
           <div className="position-absolute bottom-0 end-0 py-2">
             <a className="text-body-secondary me-2" href="#">
-              <svg className="bi" width="16px" height="16px">
-                <use xlinkHref="#trash" />
+              <svg className="bi" width="18px" height="18px">
+                <use xlinkHref="/src/assets/svg/trash.svg#trash" />
               </svg>
             </a>
             <a className="text-body-secondary me-3" href="#">
-              <svg className="bi" width="16px" height="16px">
-                <use xlinkHref="#plus" />
+              <svg className="bi" width="18px" height="18px">
+                <use xlinkHref="/src/assets/svg/plus.svg#plus" />
               </svg>
             </a>
           </div>

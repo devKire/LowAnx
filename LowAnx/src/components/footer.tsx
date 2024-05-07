@@ -24,21 +24,21 @@ function Footer() {
             <li className="ms-3 pulse">
               <a className="text-body-secondary" href="https://x.com/Low_Anx?t=u5BxsRBIXDaX2hFFZCayMQ&s=09">
                 <svg className="bi" width="24" height="24">
-                  <use xlinkHref="/src/assets/svg/twitter.svg#twitter" />
+                  <use xlinkHref="../../public/assets/svg/twitter.svg#twitter" />
                 </svg>
               </a>
             </li>
             <li className="ms-3 pulse">
               <a className="text-body-secondary" href="https://www.instagram.com/lowanx2024?igsh=MXUzZHBwbGN3dmZkZA==">
                 <svg className="bi" width="24" height="24">
-                  <use xlinkHref="/src/assets/svg/instagram.svg#instagram" />
+                  <use xlinkHref="../../public/assets/svg/instagram.svg#instagram" />
                 </svg>
               </a>
             </li> 
             <li className="ms-3 pulse">
               <a className="text-body-secondary" href="https://www.linkedin.com/company/lowanx/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_companies%3B4EvV9IOuRxOpZ7DLOBq9Nw%3D%3D">
                 <svg className="bi" width="24" height="24">
-                  <use xlinkHref="/src/assets/svg/linkedin.svg#linkedin" />
+                  <use xlinkHref="../../public/assets/svg/linkedin.svg#linkedin" />
                 </svg>
               </a>
             </li> 
