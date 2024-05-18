@@ -10,7 +10,7 @@ export default function AboutPage() {
       <Divider />
       <header className="container">
         <div className="text-center mt-5">
-                <img src="../../assets/img/logoLowAnx.jpg" alt="" className="border border-secondary rounded-circle" />
+                <img src="/assets/img/logoLowAnx.jpg" alt="" className="border border-secondary rounded-circle" />
         </div>
         <h1 className="text-center display-1 mt-5 mb-3 fst-italic">PESQUISA e Redes Sociais da LowAnx</h1>
     </header>

@@ -17,7 +17,7 @@ export default function SignupPage() {
               className="d-flex justify-content-start mb-4"
             >
               <img
-                src="/src/assets/img/logoLowAnx.jpg"
+                src="/assets/img/logoLowAnx.jpg"
                 alt=""
                 className="border border-secondary"
                 width="72"

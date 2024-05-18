@@ -12,7 +12,7 @@ export default function LoginPage() {
         <div className="form-signin w-100 m-auto glass">
           <form>
             <Link to={routes.home} type="button" className="d-flex justify-content-start mb-4">
-              <img src="/src/assets/img/logoLowAnx.jpg" alt="" className="border border-secondary" width="72" height="72" />
+              <img src="/assets/img/logoLowAnx.jpg" alt="" className="border border-secondary" width="72" height="72" />
             </Link>
 
             <h1 className="h3 mb-3 fw-normal">Informações de login</h1>

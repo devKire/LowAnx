@@ -35,7 +35,7 @@ export default function HomePage() {
             <div className="col-lg-6 col-xxl-4 my-4 text-center">
               <Link to={routes.principal} relative="path" type="button">
                 <img
-                  src="../../public/assets/img/logoLowAnx.jpg"
+                  src="/assets/img/logoLowAnx.jpg"
                   alt=""
                   className="border border-secondary rounded-circle btIndex"
                 />
