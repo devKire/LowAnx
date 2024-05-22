@@ -46,7 +46,6 @@ export default function HomePage() {
         </div>
       </header>
       <Footer />
-      <Divider />
       <Waves />
     </>
   );

@@ -33,10 +33,16 @@ function Header() {
               <Link to={routes.principal} className="nav-link" aria-current="page">Inicio</Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.book ? 'show active' : ''}`}>
-              <Link to={routes.book} className="nav-link">Livros</Link>
+              <Link to={routes.book} className="nav-link">Leituras</Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.guide ? 'show active' : ''}`}>
               <Link to={routes.guide} className="nav-link">Guias</Link>
+            </li>
+            <li className={`pulse nav-item ${location.pathname === routes.minigames ? 'show active' : ''}`}>
+              <Link to={routes.minigames} className="nav-link">Minigames</Link>
+            </li>
+            <li className={`pulse nav-item ${location.pathname === routes.chatbot ? 'show active' : ''}`}>
+              <Link to={routes.chatbot} className="nav-link">Chat Bot</Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.search ? 'show active' : ''}`}>
               <Link to={routes.search} className="nav-link">Pesquisar</Link>

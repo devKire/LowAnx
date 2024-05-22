@@ -109,7 +109,6 @@ export default function GuidePage() {
         </Tabs>
       </div>
       <Footer />
-      <Divider />
       <Waves />
     </>
   );

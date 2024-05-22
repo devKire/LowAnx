@@ -13,6 +13,8 @@ const LoginPage = lazy(()=> import ('../pages/LoginPage'))
 const ProfilePage = lazy(()=> import ('../pages/ProfilePage'))
 const SearchPage = lazy(()=> import ('../pages/SearchPage'))
 const SignupPage = lazy(()=> import ('../pages/SignupPage'))
+const MinigamesPage = lazy(()=> import ('../pages/MinigamesPage'))
+const ChatBotPage = lazy(()=> import ('../pages/ChatBotPage.tsx'))
 
 export const Router = () => {
   return (
@@ -30,6 +32,8 @@ export const Router = () => {
             <Route path={routes.profile} element={<ProfilePage/>} />
             <Route path={routes.search} element={<SearchPage/>} />
             <Route path={routes.signup} element={<SignupPage/>} />
+            <Route path={routes.minigames} element={<MinigamesPage/>} />
+            <Route path={routes.chatbot} element={<ChatBotPage/>} />
           </Routes>
       </BrowserRouter>
     </Suspense>

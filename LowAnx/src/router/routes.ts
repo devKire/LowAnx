@@ -9,4 +9,6 @@ export const routes={
     profile : '/profile',
     search : '/search',
     signup : '/signup',
+    minigames :'/minigames',
+    chatbot : '/chatbot'
 }

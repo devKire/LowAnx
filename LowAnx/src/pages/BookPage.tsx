@@ -26,7 +26,7 @@ export default function BookPage() {
     <>
       <Header />
       <Divider />
-      <h1 className="text-center display-6 mt-5 mb-3">Livros</h1>
+      <h1 className="text-center display-6 mt-5 mb-3">Leituras</h1>
       <div className="container py-5 glass">
         <Tabs
           tabs={[
@@ -63,7 +63,6 @@ export default function BookPage() {
         </Tabs>
       </div>
       <Footer />
-      <Divider />
       <Waves />
     </>
   );

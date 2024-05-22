@@ -37,7 +37,6 @@ export default function LoginPage() {
         </div>
       </main>
       <Footer />
-      <Divider />
       <Waves />
     </>
   );
