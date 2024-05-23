@@ -136,6 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
+  background-color: black;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -309,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* MINIGAME */
 
-.minigame-container {
+.RespirandoCores-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -337,4 +338,76 @@ h1, h2, h3, h4, h5, h6 {
 
 .timer {
   margin-bottom: 10px;
+}
+
+/**/
+
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #f0f8ff;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(173, 216, 230, 0.6);
+  border-radius: 50%;
+  border: 2px solid rgba(173, 216, 230, 1);
+  cursor: pointer;
+  animation: float 4s linear infinite;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-300px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(-600px) rotate(0deg);
+  }
+}
+
+
+.burst {
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+/* FloatingBall */
+
+.floating-music-ball {
+  position: absolute;
+  cursor: pointer;
+  background-color: red;
+  border-radius: 50%;
+  padding: 10px;
+  transition: background-color 0.3s;
+  animation: rotate 4s linear infinite; /* Apply rotation animation */
+}
+
+.floating-music-ball.playing {
+  background-color: green;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); /* Start from 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* Rotate to 360 degrees (1 full rotation) */
+  }
 }

@@ -8,12 +8,26 @@ import ListGames from "../components/ListGames";
 
 const gamesListData = [
   {
+    id:"respirando-cores",
     image:
-      "https://media.istockphoto.com/id/1388115341/pt/foto/shot-of-a-unrecognizable-woman-sitting-on-a-sofa-and-feeling-anxious.jpg?s=612x612&w=0&k=20&c=d9DiuUxNynYfWnK8BPHKtaU5PGqmY-PbTEsK18ekGho=",
-    title: "Título do Minigame",
-    description: "Descrição curta do Minigame",
+      "/assets/img/Respiregame.jpg",
+    title: "Respirando Cores",
+    description: "Inspire ou expire conforme o circulo aumenta e muda de cor.",
   },
-
+  {
+    id:"estourando-bolhas",
+    image:
+      "/assets/img/bubble.jpeg",
+    title: "Estourando Bolhas",
+    description: "Estoure todas as bolhas de sabão que aparecerem.",
+  },
+  {
+    id:"desenhando",
+    image:
+      "/assets/img/pencil.jpeg",
+    title: "Desenhando",
+    description: "Um lindo quadro branco para você expressar seus sentimentos ou fazer apenas a sua arte.",
+  },
 ];
 const MinigamesPage: React.FC = () => {
 
@@ -38,6 +52,7 @@ const MinigamesPage: React.FC = () => {
                 {gamesListData.map(function (ListGamesProps) {
                   return (
                     <ListGames
+                      id={ListGamesProps.id}
                       image={ListGamesProps.image}
                       title={ListGamesProps.title}
                       description={ListGamesProps.description}

@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-interface MinigameProps {
+interface RespirandoCoresProps {
   onClose: () => void;
 }
 
-const Minigame: React.FC<MinigameProps> = ({ onClose }) => {
+const RespirandoCores: React.FC<RespirandoCoresProps> = ({ onClose }) => {
   const [breathingIn, setBreathingIn] = useState(true);
   const [size, setSize] = useState(100);
   const [score, setScore] = useState(0);
-  const [speed, setSpeed] = useState(2); // Initial speed of circle change
+  const [speed, setSpeed] = useState(3); // Increased speed for faster animation
   const [color, setColor] = useState("#0000FF"); // Initial circle color
 
   useEffect(() => {
@@ -20,26 +20,23 @@ const Minigame: React.FC<MinigameProps> = ({ onClose }) => {
       if (size >= 200) {
         setBreathingIn(false);
         setScore((prevScore) => prevScore + 1);
-        setColor(getRandomColor()); // Change circle color when animation completes
       } else if (size <= 100) {
         setBreathingIn(true);
         setColor(getRandomColor()); // Change circle color when animation completes
       }
-    }, 100);
+    }, 50); // Reduced interval time for faster updates
 
     return () => {
       clearInterval(interval);
     };
   }, [breathingIn, size, speed]);
 
-
-
   const resetGame = () => {
     setScore(0);
     setSize(100);
     setBreathingIn(true);
-    setSpeed(2);
-    onClose();
+    setSpeed(8); // Reset to initial speed
+    setColor("#0000FF"); // Reset to initial color
   };
 
   const getRandomColor = () => {
@@ -48,12 +45,12 @@ const Minigame: React.FC<MinigameProps> = ({ onClose }) => {
   };
 
   return (
-    <Modal show={true} onHide={resetGame} centered>
+    <Modal show={true} onHide={onClose} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Título do Minijogo</Modal.Title>
+        <Modal.Title>Respirando Cores</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div className="minigame-container">
+        <div className="RespirandoCores-container">
           <div className="score">Pontuação: {score}</div>
           <div className="breathing-circle-container" style={{ position: "relative" }}>
             <div
@@ -62,6 +59,7 @@ const Minigame: React.FC<MinigameProps> = ({ onClose }) => {
                 width: size,
                 height: size,
                 backgroundColor: color, // Use dynamic color
+                transition: "background-color 0.5s", // Smooth color transition
               }}
             ></div>
           </div>
@@ -71,12 +69,13 @@ const Minigame: React.FC<MinigameProps> = ({ onClose }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={resetGame}>
-          Fechar
+        <Button variant="primary" onClick={resetGame}>
+        Reiniciar
         </Button>
+        <Button variant="secondary" onClick={onClose}>Fechar</Button>
       </Modal.Footer>
     </Modal>
   );
 };
 
-export default Minigame;
+export default RespirandoCores;

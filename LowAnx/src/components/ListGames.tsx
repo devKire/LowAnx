@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import RespirandoCores from "./Games/RespirandoCores";
+import EstourandoBolhas from "./Games/EstourandoBolhas";
+import Desenhando from './Games/Desenhando';
 
-import Minigame from "../components/Minigame";
+// Importe mais minigames conforme necessário
+
 type ListGamesProps = {
+  id: string;
   image: string;
   title: string;
   description: string;
@@ -10,58 +15,55 @@ type ListGamesProps = {
 
 export default function ListGames(props: ListGamesProps) {
   const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
   const [showMinigame, setShowMinigame] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
 
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
   const handleCloseMinigame = () => {
     setShowMinigame(false);
     setGameStarted(false); // Reset game started state when closing the Minigame
   };
-
   const handleStartGame = () => {
     setGameStarted(true);
     setShowMinigame(true);
   };
+
+  const renderMinigame = () => {
+    switch (props.id) {
+      case 'respirando-cores':
+        return <RespirandoCores onClose={handleCloseMinigame} />;
+      case 'estourando-bolhas':
+        return <EstourandoBolhas onClose={handleCloseMinigame} />;
+      case 'desenhando':
+        return <Desenhando onClose={handleCloseMinigame} />;
+      // Adicione mais casos conforme necessário
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
-      <div className="col-sm-6 col-lg-4 mb-4 cursor-pointer" onClick={handleShowModal} style={{ cursor: 'pointer' }}>
-        <div className="card d-flex text-bg-primary flex-row h-100">
-          <div className="card-img-left m-3">
-            <img
-              src={props.image}
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded"
-              width="100"
-              height="100"
-              alt="Imagem"
-            />
-          </div>
-          <div className="card-body">
-            <h5 className="card-title">{props.title}</h5>
-            <p className="card-text">{props.description}</p>
-          </div>
-          <div className="position-absolute bottom-0 end-0 py-2">
-            <a className="text-body-secondary me-2" href="#">
-              <svg className="bi" width="18px" height="18px">
-                <use xlinkHref="/src/assets/svg/trash.svg#trash" />
-              </svg>
-            </a>
-            <a className="text-body-secondary me-3" href="#">
-              <svg className="bi" width="18px" height="18px">
-                <use xlinkHref="/src/assets/svg/plus.svg#plus" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+      <div className="col-sm-6 col-lg-4 mb-4">
+  <div className="card h-100">
+    <img
+      src={props.image}
+      className="card-img-top img-fluid rounded"
+      alt="Imagem"
+    />
+    <div className="card-body">
+      <h5 className="card-title text-center">{props.title}</h5>
+      <p className="card-text">{props.description}</p>
+    </div>
+    <div className="card-footer text-center">
+      <button className="btn btn-primary me-2" onClick={handleShowModal}>
+        Detalhes
+      </button>
+    </div>
+  </div>
+</div>
+
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>{props.title}</Modal.Title>
@@ -72,6 +74,7 @@ export default function ListGames(props: ListGamesProps) {
             alt={props.title}
             className="img-fluid rounded"
           />
+          <p className="font-weight-bold">Descrição:</p>
           <p>{props.description}</p>
         </Modal.Body>
         <Modal.Footer>
@@ -79,11 +82,11 @@ export default function ListGames(props: ListGamesProps) {
             Fechar
           </Button>
           {!gameStarted && (
-            <button className="btn btn-primary" onClick={handleStartGame}>
+            <Button variant="primary" onClick={handleStartGame}>
               Começar
-            </button>
+            </Button>
           )}
-          {showMinigame && <Minigame onClose={handleCloseMinigame} />}
+          {showMinigame && renderMinigame()}
         </Modal.Footer>
       </Modal>
     </>

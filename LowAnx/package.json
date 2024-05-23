@@ -11,10 +11,14 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "docx-to-pdf": "^1.1.0",
+    "howler": "^2.2.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.164.1",
     "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
