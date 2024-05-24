@@ -28,6 +28,13 @@ const gamesListData = [
     title: "Desenhando",
     description: "Um lindo quadro branco para você expressar seus sentimentos ou fazer apenas a sua arte.",
   },
+  {
+    id:"contando-estrelas",
+    image:
+      "/assets/img/stars.png",
+    title: "Contando Estrelas",
+    description: "Clique nas estrelas para contá-las e seja feliz.",
+  },
 ];
 const MinigamesPage: React.FC = () => {
 

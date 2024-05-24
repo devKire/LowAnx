@@ -3,7 +3,8 @@ import { Modal, Button } from 'react-bootstrap';
 import RespirandoCores from "./Games/RespirandoCores";
 import EstourandoBolhas from "./Games/EstourandoBolhas";
 import Desenhando from './Games/Desenhando';
-
+import ContandoEstrelas from './Games/ContandoEstrela';
+import Esferas from './Games/Esferas';
 // Importe mais minigames conforme necessário
 
 type ListGamesProps = {
@@ -37,6 +38,10 @@ export default function ListGames(props: ListGamesProps) {
         return <EstourandoBolhas onClose={handleCloseMinigame} />;
       case 'desenhando':
         return <Desenhando onClose={handleCloseMinigame} />;
+      case 'contando-estrelas':
+        return <ContandoEstrelas onClose={handleCloseMinigame} />;
+        case 'esferas':
+        return <Esferas onClose={handleCloseMinigame} />;
       // Adicione mais casos conforme necessário
       default:
         return null;
