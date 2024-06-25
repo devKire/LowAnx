@@ -1,17 +1,31 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { routes } from "../router/routes";
 import { useEffect } from "react";
 import { splitTextIntoSpans } from "../scripts";
+import { auth } from "../services/firebaseConfig"; // Importando o Firebase Auth
 
 function Header() {
   const location = useLocation();
+  const navigate = useNavigate(); // Adicionando o useNavigate para redirecionar
 
   useEffect(() => {
     console.log("Active Route:", location.pathname);
   }, [location.pathname]);
+
   useEffect(() => {
     splitTextIntoSpans('.bubble-text');
   }, []);
+
+  // Função de logout
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      navigate(routes.login); // Redirecionando para a página de login após o logout
+    } catch (error) {
+      console.error('Erro ao fazer logout:', error);
+    }
+  };
+
   return (
     <>
       <h1 className="visually-hidden">dividindo</h1>
@@ -71,7 +85,9 @@ function Header() {
               <li className="nav-item">
                 <hr className="dropdown-divider" />
               </li>
-              <li className="nav-item"><Link className="dropdown-item color-red" to={routes.login}>Sair</Link></li>
+              <li className="nav-item">
+                <button className="dropdown-item color-red" onClick={handleLogout}>Sair</button>
+              </li>
             </ul>
           </div>
         </header>

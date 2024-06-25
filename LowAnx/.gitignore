@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Arquivos sensiveis do firebase
+services/firebaseConfig.tsx
+services/firestone.rules
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

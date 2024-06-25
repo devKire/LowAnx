@@ -1,7 +1,7 @@
 export const routes={
     home:'/',
     principal: '/principal',
-    about : '/about',
+    about : '/about',   
     book : '/book',
     config : '/config',
     guide : '/guide',

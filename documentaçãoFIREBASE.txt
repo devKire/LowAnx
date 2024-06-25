@@ -1,0 +1,23 @@
+# Pastas LOGIN e REGISTER foram criados para manter a organização de arquivos configurados com o firebase.
+No arquivo login algumas importações foram adicionadas e novo algoritimo foi adicionado para o firebase conectar
+ao site!
+
+Como havia citado antes, no arquivo "Login" na linha 33 a 35 poderia ser criado algum compontente de loading:
+
+if (loading) {
+    return <p>Carregando...</p>;
+  }
+
+No arquivo Register o mesmo algoritimo foi adicionado, com a diferença de que dados são enviados para o firebase
+ainda está em fase de teste para analises de segurança!
+
+# Pasta services foi criada para configuração do Fibase em nosso projeto, no site não há backend, mas, há solicitações
+que são enviadas para o firebase para o site estar em funcionamento sem há necessidade de um backend ser criado!
+
+Teremos que colocar o arquivo firebaseConfig.tsx no gitignore por conta de dados sensiveis como ID do site que 
+organização o firebase solicita para conexão.
+O arquivo firestone.rules ainda está em fase de desenvolvimento, então irei mandar apenas a versão onde a aplicação
+de login e register é a unica que está ativa no site.
+
+
+ 
