@@ -17,7 +17,6 @@ export default function SignupPage() {
     createUserWithEmailAndPassword,
     user,
     loading,
-    error,
   ] = useCreateUserWithEmailAndPassword(auth);
 
   function handleSignOut(e: React.MouseEvent<HTMLButtonElement>) {

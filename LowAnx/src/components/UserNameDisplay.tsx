@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { firebase } from '../services/firebaseConfig'; // Certifique-se de ajustar o caminho conforme necessário
+import firebase from '../services/firebaseConfig'; // Verifique o caminho do seu arquivo firebaseConfig
 
-
-const UserNameDisplay = () => {
+const UserNameDisplay: React.FC = () => {
   const [userName, setUserName] = useState<string | null>(null);
 
   useEffect(() => {
