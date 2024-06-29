@@ -5,7 +5,7 @@ import Footer from "../../components/footer";
 import Divider from "../../components/divider";
 import Waves from "../../components/waves";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../services/firebaseConfig";
+import { auth } from "../../services/firebaseConfig"; // Importe auth corretamente
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +16,6 @@ const LoginPage: React.FC = () => {
     signInWithEmailAndPassword,
     user,
     loading,
-    error,
   ] = useSignInWithEmailAndPassword(auth);
 
   const handleSignIn = (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { firebase } from '../services/firebaseConfig'; // Certifique-se de ajustar o caminho conforme necessário
 
+
 const UserNameDisplay = () => {
   const [userName, setUserName] = useState<string | null>(null);
 
