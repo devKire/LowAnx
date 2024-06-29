@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@astrojs/netlify": "^5.3.3",
     "bootstrap": "^5.3.3",
     "docx-to-pdf": "^1.1.0",
     "howler": "^2.2.4",
