@@ -5,7 +5,8 @@ import Footer from "../../components/footer";
 import Divider from "../../components/divider";
 import Waves from "../../components/waves";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../services/firebaseConfig"; // Importe auth corretamente
+import { auth } from "../../services/firebaseConfig";
+import Spinner from "../../components/Spinner";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ const LoginPage: React.FC = () => {
   }, [user, navigate]);
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <Spinner />
   }
 
   return (

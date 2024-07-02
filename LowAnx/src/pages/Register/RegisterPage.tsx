@@ -7,6 +7,7 @@ import Divider from "../../components/divider";
 import Waves from "../../components/waves";
 import { auth } from "../../services/firebaseConfig";
 import { signOut } from 'firebase/auth';
+import Spinner from "../../components/Spinner";
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
@@ -38,7 +39,7 @@ export default function SignupPage() {
   }, [user, navigate]);
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <Spinner />
   }
 
   return (

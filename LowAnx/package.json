@@ -13,6 +13,7 @@
     "@astrojs/netlify": "^5.3.3",
     "bootstrap": "^5.3.3",
     "docx-to-pdf": "^1.1.0",
+    "dotenv": "^16.4.5",
     "firebase": "^10.12.2",
     "howler": "^2.2.4",
     "react": "^18.2.0",
