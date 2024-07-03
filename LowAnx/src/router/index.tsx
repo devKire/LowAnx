@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { routes } from './routes';
 import { AuthProvider } from '../contexts/AuthContext';
 import PrivateRoute from './PrivateRoute';
+import Spinner from '../components/Spinner';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const PrincipalPage = lazy(() => import('../pages/PrincipalPage'));
@@ -20,7 +21,7 @@ const ChatBotPage = lazy(() => import('../pages/ChatBotPage'));
 export const Router = () => {
   return (
     <AuthProvider>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Spinner />}>
         <BrowserRouter>
           <Routes>
             <Route path={routes.home} element={<HomePage />} />
