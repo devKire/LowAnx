@@ -228,7 +228,7 @@ export default function PrincipalPage() {
                   <p className="item-intro text-muted">
                   Como ajudar uma pessoa com ansiedade.
                   </p>
-                  <div className="embed-responsive embed-responsive-16by9">
+                  <div className="embed-responsive embed-responsive-21by9">
                     <iframe
                       className="embed-responsive-item"
                       src="https://www.youtube.com/embed/A_cO_ps2IVw"

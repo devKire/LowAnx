@@ -1,4 +1,9 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Amiri, Georgia, "Times New Roman", serif;
 }
 
@@ -100,13 +105,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ANIMAÇÃO NOS BT */
-.aniBtn{
+.aniBtn {
   transition: transform 0.3s ease;
 }
+
 .aniBtn:hover {
-  transform: translateY(5px); 
-  transition: transform 0.3s ease; 
+  transform: translateY(5px);
+  transition: transform 0.3s ease;
 }
+
 /* LOGIN */
 
 .form-signin {
@@ -138,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 4rem;
   background-color: black;
 }
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
@@ -161,21 +169,29 @@ h1, h2, h3, h4, h5, h6 {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.15); /* Transparent white background */
-  border-radius: 20px; /* Adjust border radius as needed */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Transparent white border */
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Glass shadow */
-  backdrop-filter: blur(10px); /* Blur effect */
-  -webkit-backdrop-filter: blur(10px); /* Blur effect for older browsers */
+  background: rgba(255, 255, 255, 0.15);
+  /* Transparent white background */
+  border-radius: 20px;
+  /* Adjust border radius as needed */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Transparent white border */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* Glass shadow */
+  backdrop-filter: blur(10px);
+  /* Blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* Blur effect for older browsers */
 }
 
 /* TITLE */
@@ -188,6 +204,7 @@ h1, h2, h3, h4, h5, h6 {
   --_clr-700: hsl(235, 72%, 72%);
   --_clr-400: hsl(232, 73%, 67%);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -213,11 +230,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     /* // right side */
-    &:hover + .split-char {
+    &:hover+.split-char {
       font-weight: var(--_fw-700);
       color: var(--_clr-700);
     }
-    &:hover + .split-char + .split-char {
+
+    &:hover+.split-char+.split-char {
       font-weight: var(--_fw-400);
       color: var(--_clr-400);
     }
@@ -227,6 +245,7 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: var(--_fw-700);
       color: var(--_clr-700);
     }
+
     &:has(+ .split-char + .split-char:hover) {
       font-weight: var(--_fw-400);
       color: var(--_clr-400);
@@ -366,9 +385,11 @@ h1, h2, h3, h4, h5, h6 {
   0% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-300px) rotate(45deg);
   }
+
   100% {
     transform: translateY(-600px) rotate(0deg);
   }
@@ -387,27 +408,70 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* FloatingBall */
+/* Icon Menu */
 
-.floating-music-ball {
-  position: absolute;
-  cursor: pointer;
-  background-color: red;
+:root {
+  --menu-center-size: 60px;
+  /* Size of the menu center */
+  --menu-icon-size: 20px;
+  /* Size of the menu icons */
+  --menu-icon-spacing: 120px;
+  /* Distance icons move away from center */
+}
+
+.menu-container {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg); /* Rotate the menu container 180 degrees */
+  width: var(--menu-center-size);
+  height: var(--menu-center-size);
   border-radius: 50%;
-  padding: 10px;
-  transition: background-color 0.3s;
-  animation: rotate 4s linear infinite; /* Apply rotation animation */
+  z-index: 1000; /* Ensure menu-center is above other content */
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.floating-music-ball.playing {
-  background-color: green;
+.menu-center {
+  position: relative;
+  z-index: 1; /* Ensure menu-center is above menu-icons */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-180deg); /* Counter-rotate the menu center to compensate for container rotation */
+  transition: background-color 0.3s ease, transform 0.4s ease; /* Add transition for smooth animation */
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg); /* Start from 0 degrees */
-  }
-  to {
-    transform: rotate(360deg); /* Rotate to 360 degrees (1 full rotation) */
-  }
+
+.menu-icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg); /* Rotate icons back to their original position */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg); /* Adjust icon rotation to expand towards the top */
+  z-index: 0; /* Ensure icons are behind menu-center */
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
 }

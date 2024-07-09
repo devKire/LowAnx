@@ -12,6 +12,9 @@ import Spinner from "../../components/Spinner";
 export default function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [passwordError, setPasswordError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const navigate = useNavigate(); // Adicionando o useNavigate para redirecionar
 
   const [
@@ -20,8 +23,19 @@ export default function SignupPage() {
     loading,
   ] = useCreateUserWithEmailAndPassword(auth);
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   function handleSignOut(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
+    if (password.length < 6 || password !== passwordConfirm) {
+      setPasswordError(true);
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      setEmailError(true);
+      return;
+    }
     createUserWithEmailAndPassword(email, password);
   }
 
@@ -46,17 +60,17 @@ export default function SignupPage() {
     <>
       <Divider />
       <main className="container py-5">
-        <div className="form-signup w-100 mx-auto px-4 glass">
+        <div className="form-signup w-100 mx-auto glass p-4">
           <form>
             <Link
               to={routes.home}
               type="button"
-              className="d-flex justify-content-start mb-4"
+              className="d-block mb-4 text-center"
             >
               <img
                 src="/assets/img/logoLowAnx.jpg"
-                alt=""
-                className="border border-secondary"
+                alt="Logo"
+                className="border border-secondary rounded-circle"
                 width="72"
                 height="72"
               />
@@ -83,16 +97,23 @@ export default function SignupPage() {
                   </div>
                 </div>
               </div>
+              
               <div className="col-12">
                 <label htmlFor="email" className="form-label">
                   Email
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className={`form-control ${emailError ? 'is-invalid' : ''}`}
                   id="email"
                   placeholder="seu_email@exemplo.com"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setEmailError(!emailRegex.test(e.target.value)); // Atualiza o estado de erro baseado na validação do email
+                  }}
+                  onBlur={(e) => {
+                    setEmailError(!emailRegex.test(e.target.value)); // Valida o email ao perder o foco do campo
+                  }}
                   required
                 />
                 <div className="invalid-feedback">
@@ -100,20 +121,24 @@ export default function SignupPage() {
                 </div>
               </div>
 
+
               <div className="col-12">
                 <label htmlFor="password" className="form-label">
                   Senha
                 </label>
                 <input
                   type="password"
-                  className="form-control"
+                  className={`form-control ${passwordError ? 'is-invalid' : ''}`}
                   id="password"
                   placeholder="sua_senha123@#!*."
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setPasswordError(e.target.value.length < 6); // Atualiza o estado de erro baseado no comprimento da senha
+                  }}
                   required
                 />
                 <div className="invalid-feedback">
-                  Por favor, insira uma senha válida.
+                  A senha deve ter pelo menos 6 caracteres.
                 </div>
               </div>
 
@@ -123,12 +148,22 @@ export default function SignupPage() {
                 </label>
                 <input
                   type="password"
-                  className="form-control"
+                  className={`form-control ${password !== passwordConfirm || passwordError ? 'is-invalid' : ''}`}
                   id="passwordConfirm"
                   placeholder="sua_senha123@#!*."
+                  onChange={(e) => {
+                    setPasswordConfirm(e.target.value);
+                    if (password !== e.target.value) {
+                      setPasswordError(true);
+                    } else {
+                      setPasswordError(false);
+                    }
+                  }}
                   required
                 />
-                <div className="invalid-feedback">As senhas não coincidem.</div>
+                <div className="invalid-feedback">
+                  {password !== passwordConfirm ? 'As senhas não coincidem.' : 'A senha deve ter pelo menos 6 caracteres.'}
+                </div>
               </div>
 
               <hr className="my-4" />
@@ -138,9 +173,7 @@ export default function SignupPage() {
               </button>
             </div>
 
-            <p className="mt-5 mb-3 text-body-secondary">
-              LowAnx. Sem Ansiedade!
-            </p>
+            <p className="mt-5 mb-3 text-body-secondary">Já tem uma conta? <Link to={routes.login}>Entrar</Link></p>
           </form>
         </div>
       </main>

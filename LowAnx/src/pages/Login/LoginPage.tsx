@@ -40,8 +40,18 @@ const LoginPage: React.FC = () => {
       <main className="container py-5">
         <div className="form-signin w-100 m-auto glass">
           <form>
-            <Link to={routes.home} type="button" className="d-flex justify-content-start mb-4">
-              <img src="/assets/img/logoLowAnx.jpg" alt="" className="border border-secondary" width="72" height="72" />
+          <Link
+              to={routes.home}
+              type="button"
+              className="d-block mb-4 text-center"
+            >
+              <img
+                src="/assets/img/logoLowAnx.jpg"
+                alt="Logo"
+                className="border border-secondary rounded-circle"
+                width="72"
+                height="72"
+              />
             </Link>
 
             <h1 className="h3 mb-3 fw-normal">Informações de login</h1>
@@ -60,8 +70,8 @@ const LoginPage: React.FC = () => {
                 Lembrar meu login
               </label>
             </div>
-            <button className="btn btn-primary w-100 py-2" type="submit" onClick={handleSignIn}>Sign in</button>
-            <p className="mt-5 mb-3 text-body-secondary">LowAnx. Sem Ansiedade!</p>
+            <button className="btn btn-primary w-100 py-2" type="submit" onClick={handleSignIn}>Entrar</button>
+            <p className="mt-5 mb-3 text-body-secondary">Não tem uma conta? <Link to={routes.signup}>Cadastre-se</Link></p>
           </form>
         </div>
       </main>

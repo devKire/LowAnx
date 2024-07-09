@@ -3,10 +3,10 @@ import { routes } from "../router/routes";
 import { useEffect } from "react";
 import { splitTextIntoSpans } from "../scripts";
 import { auth } from "../services/firebaseConfig"; // Importando o Firebase Auth
-
+import { Book, Chat, House, Gear, Person, Controller, Search, CardList, InfoCircle, DoorOpenFill } from 'react-bootstrap-icons'; 
 function Header() {
   const location = useLocation();
-  const navigate = useNavigate(); // Adicionando o useNavigate para redirecionar
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log("Active Route:", location.pathname);
@@ -16,11 +16,10 @@ function Header() {
     splitTextIntoSpans('.bubble-text');
   }, []);
 
-  // Função de logout
   const handleLogout = async () => {
     try {
       await auth.signOut();
-      navigate(routes.login); // Redirecionando para a página de login após o logout
+      navigate(routes.login);
     } catch (error) {
       console.error('Erro ao fazer logout:', error);
     }
@@ -44,22 +43,34 @@ function Header() {
 
           <ul className="nav nav-pills">
             <li className={`pulse nav-item ${location.pathname === routes.principal ? 'show active' : ''}`}>
-              <Link to={routes.principal} className="nav-link" aria-current="page">Inicio</Link>
+              <Link to={routes.principal} className="nav-link">
+                <House className="me-2" /> Início
+              </Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.book ? 'show active' : ''}`}>
-              <Link to={routes.book} className="nav-link">Leituras</Link>
+              <Link to={routes.book} className="nav-link">
+                <Book className="me-2" /> Leituras
+              </Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.guide ? 'show active' : ''}`}>
-              <Link to={routes.guide} className="nav-link">Guias</Link>
+              <Link to={routes.guide} className="nav-link">
+                <CardList className="me-2" /> Guias
+              </Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.minigames ? 'show active' : ''}`}>
-              <Link to={routes.minigames} className="nav-link">Minigames</Link>
+              <Link to={routes.minigames} className="nav-link">
+                <Controller className="me-2" /> Minigames
+              </Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.chatbot ? 'show active' : ''}`}>
-              <Link to={routes.chatbot} className="nav-link">Chat Bot</Link>
+              <Link to={routes.chatbot} className="nav-link">
+                <Chat className="me-2" /> Chat Bot
+              </Link>
             </li>
             <li className={`pulse nav-item ${location.pathname === routes.search ? 'show active' : ''}`}>
-              <Link to={routes.search} className="nav-link">Pesquisar</Link>
+              <Link to={routes.search} className="nav-link">
+                <Search className="me-2" /> Pesquisar
+              </Link>
             </li>
           </ul>
 
@@ -79,14 +90,14 @@ function Header() {
               />
             </a>
             <ul className="dropdown-menu text-small shadow">
-              <li className="nav-item"><Link className="dropdown-item" to={routes.profile}>Perfil</Link></li>
-              <li className="nav-item"><Link className="dropdown-item" to={routes.config}>Configurações</Link></li>
-              <li className="nav-item"><Link className="dropdown-item" to={routes.about}>Sobre</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.profile}><Person className="me-2" /> Perfil</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.config}><Gear className="me-2" /> Configurações</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.about}><InfoCircle className="me-2" /> Sobre</Link></li>
               <li className="nav-item">
                 <hr className="dropdown-divider" />
               </li>
               <li className="nav-item">
-                <button className="dropdown-item color-red" onClick={handleLogout}>Sair</button>
+                <button className="dropdown-item text-danger" onClick={handleLogout}><DoorOpenFill className="me-2" /> Sair</button>
               </li>
             </ul>
           </div>
