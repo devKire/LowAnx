@@ -3,6 +3,7 @@ import Footer from "../components/footer";
 import Divider from "../components/divider";
 import Header from "../components/header";
 import Waves from "../components/waves";
+import Menu from "../components/menuIcons";
 
 const predefinedQA = [
   {
@@ -93,6 +94,7 @@ export default function ChatbotPage() {
 
   return (
     <>
+      <Menu />
       <Header />
       <Divider />
       <main>

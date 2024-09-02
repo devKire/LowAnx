@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import Divider from "../components/divider";
 import Header from "../components/header";
 import Waves from "../components/waves";
+import Menu from "../components/menuIcons";
 
 export default function PrincipalPage() {
   const handleShare = () => {
@@ -24,6 +25,7 @@ export default function PrincipalPage() {
 
   return (
     <>
+      <Menu />
       <Header />
       <Divider />
       <main>
@@ -205,55 +207,51 @@ export default function PrincipalPage() {
 
       {/* Video modal popup*/}
       <div
-        className="modal fade"
-        id="video"
-        tabIndex={-1}
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="row featurette">
-              <div className="mx-auto text-center">
-                <div className="modal-body">
-                  <h2 className="text-uppercase">Mensagem de Hoje</h2>
-                  <p className="item-intro text-muted">
-                  Como ajudar uma pessoa com ansiedade.
-                  </p>
-                  <div className="embed-responsive embed-responsive-21by9">
-                    <iframe
-                      className="embed-responsive-item"
-                      src="https://www.youtube.com/embed/A_cO_ps2IVw"
-                      title="YouTube video player"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-
-                  <p>
-                  Toda Crise é passageira, diz VARELLA. Neste vídeo VARELLA dá dicas de como ajudar uma pessoa com ansiedade.
-                  </p>
-
-                  <button
-                    className="btn btn-primary btn-xl text-uppercase"
-                    type="button"
-                    onClick={handleShare}
-                  >
-                    Compartilhar
-                  </button>
-                </div>
-              </div>
-            </div>
+  className="modal fade"
+  id="video"
+  tabIndex={-1}
+  aria-labelledby="videoModalLabel"
+  aria-hidden="true"
+>
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="videoModalLabel">Mensagem de Hoje</h5>
+        <button
+          type="button"
+          className="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div className="modal-body">
+        <div className="text-center">
+          <p className="item-intro text-muted">
+            Como ajudar uma pessoa com ansiedade.
+          </p>
+          <div className="ratio ratio-16x9">
+            <iframe
+              src="https://www.youtube.com/embed/A_cO_ps2IVw"
+              title="YouTube video player"
+              allowFullScreen
+            ></iframe>
           </div>
+          <p className="mt-3">
+            Toda Crise é passageira, diz VARELLA. Neste vídeo VARELLA dá dicas de como ajudar uma pessoa com ansiedade.
+          </p>
+          <button
+            className="btn btn-primary btn-xl text-uppercase"
+            type="button"
+            onClick={handleShare}
+          >
+            Compartilhar
+          </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
       <Footer />
       <Waves />
     </>

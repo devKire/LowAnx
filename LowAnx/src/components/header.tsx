@@ -40,7 +40,33 @@ function Header() {
             </svg>
             <span className="fs-2 fw-bold bubble-text text">LowAnx</span>
           </Link>
-
+          <div className="flex-shrink-0 dropdown">
+            <a
+              href="#"
+              className="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://media.istockphoto.com/id/1345149081/pt/vetorial/a-frustrated-man-sits-and-hugs-his-knees-nervous-problem-anxiety-and-confusion-in-thoughts.jpg?s=612x612&w=0&k=20&c=wqDH7BJsVBfLStoEXtF4w8pPdmTK1NDsFI48GuIGcn0="
+                alt="mdo"
+                width="32"
+                height="32"
+                className="rounded-circle"
+              />
+            </a>
+            <ul className="dropdown-menu text-small shadow">
+              <li className="nav-item"><Link className="dropdown-item" to={routes.profile}><Person className="me-2" /> Perfil</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.config}><Gear className="me-2" /> Configurações</Link></li>
+              <li className="nav-item"><Link className="dropdown-item" to={routes.about}><InfoCircle className="me-2" /> Sobre</Link></li>
+              <li className="nav-item">
+                <hr className="dropdown-divider" />
+              </li>
+              <li className="nav-item">
+                <button className="dropdown-item text-danger" onClick={handleLogout}><DoorOpenFill className="me-2" /> Sair</button>
+              </li>
+            </ul>
+          </div>
           <ul className="nav nav-pills">
             <li className={`pulse nav-item ${location.pathname === routes.principal ? 'show active' : ''}`}>
               <Link to={routes.principal} className="nav-link">
@@ -73,34 +99,6 @@ function Header() {
               </Link>
             </li>
           </ul>
-
-          <div className="flex-shrink-0 dropdown">
-            <a
-              href="#"
-              className="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src="https://media.istockphoto.com/id/1345149081/pt/vetorial/a-frustrated-man-sits-and-hugs-his-knees-nervous-problem-anxiety-and-confusion-in-thoughts.jpg?s=612x612&w=0&k=20&c=wqDH7BJsVBfLStoEXtF4w8pPdmTK1NDsFI48GuIGcn0="
-                alt="mdo"
-                width="32"
-                height="32"
-                className="rounded-circle"
-              />
-            </a>
-            <ul className="dropdown-menu text-small shadow">
-              <li className="nav-item"><Link className="dropdown-item" to={routes.profile}><Person className="me-2" /> Perfil</Link></li>
-              <li className="nav-item"><Link className="dropdown-item" to={routes.config}><Gear className="me-2" /> Configurações</Link></li>
-              <li className="nav-item"><Link className="dropdown-item" to={routes.about}><InfoCircle className="me-2" /> Sobre</Link></li>
-              <li className="nav-item">
-                <hr className="dropdown-divider" />
-              </li>
-              <li className="nav-item">
-                <button className="dropdown-item text-danger" onClick={handleLogout}><DoorOpenFill className="me-2" /> Sair</button>
-              </li>
-            </ul>
-          </div>
         </header>
       </div>
     </>

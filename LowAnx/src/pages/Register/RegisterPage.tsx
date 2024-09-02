@@ -76,7 +76,7 @@ export default function SignupPage() {
               />
             </Link>
 
-            <h1 className="h3 mb-3 fw-normal">Registro de Usuário</h1>
+            <h1 className="h3 mb-3 fw-normal">Cadastro de Usuário</h1>
 
             <div className="row g-3">
               <div className="col-12">
@@ -169,7 +169,7 @@ export default function SignupPage() {
               <hr className="my-4" />
 
               <button className="w-100 btn btn-primary btn-lg" type="submit" onClick={handleSignOut}>
-                Registrar
+                Cadastrar
               </button>
             </div>
 

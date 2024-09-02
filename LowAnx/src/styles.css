@@ -7,83 +7,6 @@ h6 {
   font-family: Amiri, Georgia, "Times New Roman", serif;
 }
 
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
-.b-divider {
-  width: 100%;
-  height: 1rem;
-  border: solid rgba(0, 0, 0, .15);
-  border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-}
-
-.b-example-vr {
-  flex-shrink: 0;
-  width: 1.5rem;
-  height: 100vh;
-}
-
-.bi {
-  vertical-align: -.125em;
-  fill: currentColor;
-}
-
-.nav-scroller {
-  position: relative;
-  z-index: 2;
-  height: 2.75rem;
-  overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  margin-top: -1px;
-  overflow-x: auto;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-.btn-bd-primary {
-  --bd-violet-bg: #712cf9;
-  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bd-violet-bg);
-  --bs-btn-border-color: var(--bd-violet-bg);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: #6528e0;
-  --bs-btn-hover-border-color: #6528e0;
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #5a23c8;
-  --bs-btn-active-border-color: #5a23c8;
-}
-
-.bd-mode-toggle {
-  z-index: 1500;
-}
-
-.bd-mode-toggle .dropdown-menu .active .bi {
-  display: block !important;
-}
-
-
 /* botão index */
 
 .btIndex {
@@ -411,46 +334,44 @@ h6 {
 /* Icon Menu */
 
 :root {
-  --menu-center-size: 60px;
-  /* Size of the menu center */
-  --menu-icon-size: 20px;
-  /* Size of the menu icons */
-  --menu-icon-spacing: 120px;
-  /* Distance icons move away from center */
+  --menu-center-size: 60px; /* Tamanho do centro do menu */
+  --menu-icon-size: 20px; /* Tamanho dos ícones do menu */
+  --menu-icon-spacing: 120px; /* Distância que os ícones se afastam do centro */
+  --menu-move-distance: -200%; /* Distância que o menu se move */
+  --music-player-move-distance: 200%; /* Distância que o music player se move */
 }
 
 .menu-container {
   position: fixed;
   bottom: 40px;
   left: 50%;
-  transform: translateX(-50%) rotate(180deg); /* Rotate the menu container 180 degrees */
+  transform: translateX(-50%) rotate(180deg) translateY(var(--menu-move-distance));
   width: var(--menu-center-size);
   height: var(--menu-center-size);
   border-radius: 50%;
-  z-index: 1000; /* Ensure menu-center is above other content */
+  z-index: 1000; /* Garante que o menu-center esteja acima dos outros conteúdos */
   cursor: pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .menu-center {
   position: relative;
-  z-index: 1; /* Ensure menu-center is above menu-icons */
+  z-index: 1; /* Garante que o menu-center esteja acima dos menu-icons */
   width: 100%;
   height: 100%;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotate(-180deg); /* Counter-rotate the menu center to compensate for container rotation */
-  transition: background-color 0.3s ease, transform 0.4s ease; /* Add transition for smooth animation */
+  transform: rotate(-180deg); /* Contra-rotação do centro do menu para compensar a rotação do container */
+  transition: background-color 0.3s ease, transform 0.4s ease; /* Adiciona transição para animação suave */
 }
-
 
 .menu-icon-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(180deg); /* Rotate icons back to their original position */
+  transform: translate(-50%, -50%) rotate(180deg); /* Rotaciona os ícones de volta para sua posição original */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -464,8 +385,8 @@ h6 {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg); /* Adjust icon rotation to expand towards the top */
-  z-index: 0; /* Ensure icons are behind menu-center */
+  transform: translate(-50%, -50%) rotate(-90deg); /* Ajusta a rotação do ícone para expandir em direção ao topo */
+  z-index: 0; /* Garante que os ícones estejam atrás do menu-center */
 }
 
 .icon-wrapper {
@@ -475,3 +396,221 @@ h6 {
   width: var(--menu-icon-size);
   height: var(--menu-icon-size);
 }
+
+.hidden {
+  transform: translateX(-50%) rotate(180deg) translateY(var(--menu-move-distance));
+  /* Usa a variável para a distância de movimento */
+}
+
+.visible {
+  transform: translateX(-50%) rotate(180deg) translateY(0);
+  /* Traz o elemento para a posição original */
+}
+
+/* MUSIC PLAYER */
+
+.music-player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(var(--music-player-move-distance));
+  transition: transform 2s ease, background 2s ease;
+  z-index: 999;
+}
+
+.music-player {
+  width: 100%;
+  background: rgb(139,150,164);
+  background: linear-gradient(0deg, rgba(139,150,164,1) 0%, rgba(255,255,255,0) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.music-player-container.hidden .music-player {
+  background: linear-gradient(0deg, rgba(139,150,164,0) 0%, rgba(255,255,255,0) 100%);
+}
+
+.music-player-container.visible .music-player {
+  background: linear-gradient(0deg, rgba(139,150,164,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.control-button:hover {
+  transform: scale(1.1);
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+  transition: height 0.3s ease;
+}
+
+.progress-bar:hover {
+  height: 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #007bff;
+}
+
+.song-info {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.song-cover {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.song-details {
+  text-align: left;
+}
+
+.song-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.artist {
+  color: #666;
+  font-size: 14px;
+}
+
+.music-player-container.hidden {
+  transform: translateY(var(--music-player-move-distance));
+}
+
+.music-player-container.visible {
+  transform: translateY(0);
+}
+
+.text-muted-foreground {
+  font-size: 12px;
+  color: #000000;
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+.fullscreen-modal .modal-dialog {
+  max-width: 500px;
+  margin: auto; /* Centraliza o modal */
+}
+
+.fullscreen-modal .modal-content {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.fullscreen-modal .modal-header,
+.fullscreen-modal .modal-body,
+.fullscreen-modal .modal-footer {
+  border: 0;
+}
+
+.fullscreen-modal .modal-body {
+  overflow-y: auto;
+}
+
+.music-list {
+  max-height: calc(100vh - 160px); /* Ajuste para a altura total menos cabeçalho e rodapé */
+}
+
+.music-item {
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.music-item:hover {
+  background-color: #7a7a7a;
+}
+
+.music-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.music-artist {
+  font-size: 16px;
+}
+
+.img-thumbnail {
+  width: 80px;
+  height: auto;
+  object-fit: cover;
+}
+
+.modal-player-controls-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.modal-progress-bar {
+  bottom: 50px;
+  left: 0px;
+  right: 0px;
+  height: 5px;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: height 0.3s ease;
+}
+
+.modal-progress-bar:hover {
+  height: 10px;
+}
+
+.modal-progress-bar .progress {
+  height: 100%;
+  background-color: #007bff;
+}
+
+.song-image {
+  width: 200px; /* Diminuído para se ajustar ao modal */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  z-index: 0;
+}
+
+
+@media (max-width: 768px) {
+  .progress-bar,
+  .list-button,
+  .text-muted-foreground {
+    display: none;
+  }
+}
+

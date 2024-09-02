@@ -2,10 +2,12 @@ import Footer from "../components/footer"
 import Divider from "../components/divider"
 import Header from "../components/header"
 import Waves from "../components/waves"
+import Menu from "../components/menuIcons"
 
 export default function SearchPage() {
   return (
     <>
+      <Menu />
       <Header />
       <Divider />
       <main>

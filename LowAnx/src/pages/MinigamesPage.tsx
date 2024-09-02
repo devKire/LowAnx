@@ -5,6 +5,7 @@ import Waves from "../components/waves";
 import TabPane from "../components/TabPane";
 import Tabs from "../components/Tabs";
 import ListGames from "../components/ListGames";
+import Menu from "../components/menuIcons";
 
 const gamesListData = [
   {
@@ -40,6 +41,7 @@ const MinigamesPage: React.FC = () => {
 
   return (
     <>
+      <Menu />
       <Header />
       <Divider />
       <main>
