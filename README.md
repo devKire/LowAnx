@@ -32,8 +32,9 @@ pages/: Páginas do site.
 styles/: Arquivos de estilo CSS e SASS.
 utils/: Funções utilitárias e hooks personalizados.
 public/: Arquivos estáticos, como imagens e fontes.
-tests/: Testes do projeto.
-config/: Arquivos de configuração para ferramentas e bibliotecas.
+router/: Configuração de navegação entre os componentes.
+services/: Arquivos de configuração do firebase.
+contexts/: configurações do firebase
 
 ## Dependências
 
